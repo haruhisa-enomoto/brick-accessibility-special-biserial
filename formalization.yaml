@@ -1,0 +1,146 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Brick accessibility for brick-finite special biserial algebras"
+  description: >-
+    A complete Lean 4 formalization, built on Mathlib, of the manuscript Brick
+    accessibility for brick-finite special biserial algebras. Over an
+    algebraically closed field, every nonsimple brick over a basic
+    finite-dimensional brick-finite special biserial algebra has a brick
+    submodule or a brick quotient of dimension one less (Theorem A).
+    Consequently every brick is brick accessible and the brick dimensions of a
+    nonzero such algebra form an interval {1, ..., N} (Corollary B), and both
+    conclusions hold for representation-finite biserial algebras (Corollary
+    5.6), answering a question of Mousavand on gaps in brick dimensions in the
+    biserial case. The cited inputs are proved in the library: the string and
+    band classification of Butler and Ringel for bands of every rank, the
+    string quotient of Wald and Waschbüsch, and the theorem of Skowroński and
+    Waschbüsch that representation-finite biserial algebras are special
+    biserial.
+  authors: ["Haruhisa Enomoto"]
+  responsible_maintainers: ["Haruhisa Enomoto"]
+  license: "Apache-2.0"
+
+classification:
+  arxiv: ["math.RT", "math.RA"]
+  msc2020: ["16G20", "16G60", "16G10"]
+
+sources:
+  - title: "Brick accessibility for brick-finite special biserial algebras"
+    authors: ["OpenAI Codex (GPT-6)"]
+    type: "paper"
+    location: "docs/manuscript/ (revision of October 18, 2026, unpublished manuscript)"
+    relationship: "formalizes"
+    note: >-
+      The formalized manuscript, written under Haruhisa Enomoto's direction.
+      Statements are matched with Lean declarations in
+      docs/PAPER-CORRESPONDENCE.md. Some Lean proofs take different routes
+      than the manuscript; the correspondence records them.
+    author_endorsement: "participated"
+  - title: "Auslander-Reiten sequences with few middle terms and applications to string algebras"
+    authors: ["M. C. R. Butler", "C. M. Ringel"]
+    type: "paper"
+    location: "Comm. Algebra 15 (1987), 145–179"
+    relationship: "background"
+    note: "Source of the string and band classification (Theorem 4.5), proved in the library for bands of every rank."
+    author_endorsement: "not-contacted"
+  - title: "Tame biserial algebras"
+    authors: ["B. Wald", "J. Waschbüsch"]
+    type: "paper"
+    location: "J. Algebra 95 (1985), 480–500"
+    relationship: "background"
+    note: "Source of the string quotient (Lemma 5.3), proved in the library in the exact form used by the manuscript."
+    author_endorsement: "not-contacted"
+  - title: "Representation-finite biserial algebras"
+    authors: ["A. Skowroński", "J. Waschbüsch"]
+    type: "paper"
+    location: "J. Reine Angew. Math. 345 (1983), 172–181"
+    relationship: "background"
+    note: >-
+      Source of the theorem that representation-finite biserial algebras are
+      special biserial, used for Corollary 5.6 and proved in the library.
+    author_endorsement: "not-contacted"
+
+status:
+  scope: >-
+    Theorem A, Corollary B and Corollary 5.6 as stated in the manuscript, for
+    arbitrary algebraically closed fields. The compared statements in
+    Challenge.lean use only Mathlib definitions: bound quiver presentations
+    of the algebra by its path algebra with admissible kernel, the special
+    biserial and biserial conditions, bricks, brick-finiteness,
+    representation-finiteness, basic algebras and brick accessibility, all
+    for finite-dimensional right modules. The library also proves every
+    numbered proposition, lemma, theorem, corollary and remark of the
+    manuscript, including its cited inputs. Not formalized: the genericity
+    sentences of Remark 2.2, the four examples and the two questions. The
+    closure of special biserial algebras under quotients, cited in Remark 5.7,
+    is proved in the path-data form used there.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["Claude Opus 5.5"]
+      framework: "Claude Code"
+      tool_setup: >-
+        An AI coding agent working in a local Lean project with compiler
+        feedback, explicit axiom audits and a statement-by-statement
+        correspondence with the manuscript, under the author's direction.
+      cost:
+        wall_time: "About two days of development (October 28–29, 2026)"
+        spend_usd: "subscription-based"
+        hardware: "Local Linux workstation"
+      prompting_notes: >-
+        The author required every result of the manuscript to be proved,
+        including the cited inputs, with Mathlib as the only dependency, and
+        allowed cleaner proof routes than the manuscript.
+  spend_usd: "subscription-based"
+  notes: >-
+    The manuscript was written by OpenAI Codex (GPT-6) under the author's
+    direction. The formalization was written by an AI coding agent under the
+    author's direction. A complete model-by-model history has not been
+    reconstructed.
+
+fidelity:
+  divergences: >-
+    Theorem A, Corollary B and Corollary 5.6 are stated as in the manuscript.
+    Modules are right modules, formalized as modules over the opposite
+    algebra, and the field, the algebra and the modules lie in one universe.
+    Ext¹ is modelled by derivations modulo inner derivations. Some intermediate
+    results are proved in an equivalent or more general form, and some proofs
+    take a different route than the manuscript; docs/PAPER-CORRESPONDENCE.md
+    lists these. No weakening of the hypotheses or conclusions of the three
+    principal results is known.
+
+review:
+  status: "agent-reviewed"
+  reviewers: ["OpenAI Codex agent"]
+  notes: >-
+    A separate agent audited the correspondence of the principal results with
+    the manuscript, the build and the axiom closure on October 28, 2026, before
+    the statement coverage was extended. The extension has not been reviewed
+    independently, and no human expert has checked the Lean statements.
+
+alignment:
+  namespace: "BrickAccessibility"
+  statements:
+    - source: "Brick accessibility for brick-finite special biserial algebras, Theorem A (Theorem 5.4)"
+      lean: "BrickAccessibility.Challenge.theoremA"
+      module: "Challenge"
+      status: "proved"
+      note: "Proved in Solution.lean from BrickAccessibility.theoremA."
+    - source: "Brick accessibility for brick-finite special biserial algebras, Corollary B (Corollary 5.5)"
+      lean: "BrickAccessibility.Challenge.corollaryB"
+      module: "Challenge"
+      status: "proved"
+      note: "Proved in Solution.lean from BrickAccessibility.corollaryB."
+    - source: "Brick accessibility for brick-finite special biserial algebras, Corollary 5.6"
+      lean: "BrickAccessibility.Challenge.corollaryBiserial"
+      module: "Challenge"
+      status: "proved"
+      note: "Proved in Solution.lean from BrickAccessibility.corollaryBiserial."
+
+acknowledgements: "Lean and Mathlib."

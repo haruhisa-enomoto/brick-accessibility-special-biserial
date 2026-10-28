@@ -1,0 +1,732 @@
+{
+ "source_repository": "homological-conjectures (private research repository)",
+ "source_package": "formalization/brick_accessibility",
+ "source_commit": "e743cf372b65dcb078567c29a84b3e86b8252986",
+ "port": "Lean v4.33.1 and Mathlib 0df444a to Lean v4.35.0-rc3 and Mathlib c55e6e7, Lean module system",
+ "port_edits": {
+  "BrickAccessibility/Section4/Normalize.lean": "DistribMulAction.toLinearMap renamed to DistribSMul.toLinearMap in Mathlib",
+  "BrickAccessibility/Section3/DualString.lean": "direct import of Mathlib.LinearAlgebra.Dual.Lemmas, previously reached transitively"
+ },
+ "files": [
+  {
+   "path": "BrickAccessibility/Basic/Brick.lean",
+   "source_sha256": "ca7d0f5d243b03b1630ab2b7d5f2b81012360f071e656428ce7882524f38ee4b",
+   "release_sha256": "db54f8f8e708ce3cd4ff3b8771a425709a06de090f3591f08fc18e79f3866e57",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Basic/Ext.lean",
+   "source_sha256": "3ee8d354c53ec65ab95f84436044a2ac541bc65e4257f77d348b8957b30c8d82",
+   "release_sha256": "a0ce733ff3a421588f0c0f7e8adfebd4cc46c0bbbbbba06764d1d34590c9ad1d",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Basic/Finiteness.lean",
+   "source_sha256": "2d5386c78f56febdb699b1677b3feab98742d6b572bba0f7556fe1d3029f464c",
+   "release_sha256": "cfe513394fc95c6c8b085eaf0ecbc70ed6be79d9fd255c6d148e27b055088df9",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Basic/Inflation.lean",
+   "source_sha256": "ff062a36edc37052a0cdbfd06b00113704f70c35bd68e4238e86161a05b94861",
+   "release_sha256": "0b083eaffb8198ddb7b7a6e6c18a1a7546fa1a6430e569c1ad6eca0d0653b619",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Bridge/ArrInd.lean",
+   "source_sha256": "7890b1727295a3587e0643c60008906deca94dea41bc3b34aae8a6a8d00c2b7b",
+   "release_sha256": "401dba8531b91ed782c170aea3665ae9080de7d3aadce5252b950c21afe0ff50",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Bridge/FromPathData.lean",
+   "source_sha256": "3a561f61fa58f8139a2b9d24d6cbff984de60ac500ca5d9d267cac074837d3ea",
+   "release_sha256": "f12b56e808421735b0db5e42b69777a79d7e5ba8b6acbab9e465d12cbd041ae4",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Bridge/PathAlgebra.lean",
+   "source_sha256": "e8c1af4844b4dacae02514b1ede0bd64f5da89ecebc5ad5bdff4122f9b9ae6f5",
+   "release_sha256": "72066e2977633aa6b83fe4de27fd4268b4fc539ca6cebe7070f85a77df2036eb",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Bridge/Presentation.lean",
+   "source_sha256": "84ae73fd7238e04fc48ee9a99e0372b7891b418b804a5071ee0ba409fe675cbe",
+   "release_sha256": "49834fc4214a915e176e05513ee2f3676cf0d454503d1caa97baf92dec23af19",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Cited/SkowronskiWaschbusch.lean",
+   "source_sha256": "26bc84e1d324bbe6c98bbd0346e93ca63e630336ae5f170d10836bf865b29f6e",
+   "release_sha256": "51d6b3b8edaa3c12948bcca5e952399993e52f79999843f63af48ecbd70889e9",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Cited/StringBricks.lean",
+   "source_sha256": "522e0387b4daf6a357966f4a9e55af7c78a58d3fc23d15abc900d34dcc0725fe",
+   "release_sha256": "f0b397f3055296442f460652bb347fbf0f5987b2815c67b3646b9cedff4bb054",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Cited/WaldWaschbusch.lean",
+   "source_sha256": "130ceaa6c8ffd6fcc104196d7f03274f8684be34a73f7202c68cc5b2872c2759",
+   "release_sha256": "25d09ca64ed2e4dfe7917c8493dbe8c54212f3963bbec76bb896b5eee899c034",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Additive.lean",
+   "source_sha256": "27f2498d3de59b7d055343e5e46af787906b28423590775e8b8705f73cbe1829",
+   "release_sha256": "504178a4503adfa61651fe0fb56b2543df3eaa980d34bfeb3321d789ad5f3eb4",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BandBQ.lean",
+   "source_sha256": "75f78891a81e61185688d1a4caebc71cf9c99bab0a5199eea0dabadc8c1193af",
+   "release_sha256": "0028256fb4254ef6e514e1960bd57a699128bf48a360d0042ace2b33cfc8ff41",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BandBrick.lean",
+   "source_sha256": "ae6c38b3682a44a538863690caef4c849cc0866a316bd61e9ed06312b563fbcf",
+   "release_sha256": "033ec6d16877a6cd4a5fcbf7aed629e5bed8ddc9a7a5153ffac95a75c01b34c1",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BandBrickCrit.lean",
+   "source_sha256": "1de8a50901e5bd22b2a7349938b2ca1f55d2eeb21f7db751b95c7f6dcc63e7f6",
+   "release_sha256": "9c9bdeadff420a820a1fd4759e0d7c577bc7277d4fc4a3f02eef7b31ab4273db",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BandIndec.lean",
+   "source_sha256": "f58540546d34bdd38195f56da05ebc749b5429e18ad57f16a96a9a4ff48e4dc9",
+   "release_sha256": "ac38ecb37384ca09d606a143fd7dd183dd43a8e1daf08b90d514de4642ee06b9",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BandJordan.lean",
+   "source_sha256": "359ee9b0ac21609163c74723f3f9f938a36f48e628f732a487641540c9a99f09",
+   "release_sha256": "220641b4d266e147babfc45ff4150a8adbea1b0c13e09f7e196ddcd5ffbfc24b",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BandMaps.lean",
+   "source_sha256": "96f70d77d21a9a831dae6a8defd797944d622bc8249594d383adea4c130005fa",
+   "release_sha256": "6e2f752d1c1ed945720c41298bb0992451c93c357b3e4f773369835cb2241ae5",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BandRel.lean",
+   "source_sha256": "067a758976542df4001d9585b4e34e193be64f8e094af0f7e1c12e40118b297d",
+   "release_sha256": "f127dc312d97088d9736e551bbd77f67bd2d85554dfbea30e2db26c4906ca745",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BandScalar.lean",
+   "source_sha256": "44cac88446c22945742bcc27521729a49840b9bfb9fbeb8a51da68d7c1425736",
+   "release_sha256": "2c26ffbc9ae7226967b1b41c7d08b4f385617580aea0e41c855c287cabf92087",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BandShift.lean",
+   "source_sha256": "843fa23a7712e400b4da8be057ce188fa94ff24fd5c5293113d60eca10b0ef91",
+   "release_sha256": "ea757ed27faffc8d3f3dffa9b05454d9a9bbbb4c4272ea24497003748fd7b00a",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BandSplit.lean",
+   "source_sha256": "e0b402640ce25f486aee374483fdefe6e7d178e9c9025b59100606abf20aab71",
+   "release_sha256": "ff692723aadd6213cd2f949d4a2ad6f516fedc94bd45191813636ae0568018cd",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BandWalks.lean",
+   "source_sha256": "3a664266b5f515249cd846e5ad1e4b72ef563e3fdee4fbd4dc0bb5b5b1427e5d",
+   "release_sha256": "7300b3c7056ad2449d786ae2932af8adf03f33abe2dc642bcd89698c911e786f",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BlockCount.lean",
+   "source_sha256": "55adbc7ed00a7c71d84728c1a4d2978da9e636fb84960a376b7fc62e98c3b6a3",
+   "release_sha256": "87edf4192234348f7b27ec9700257703647dd5b3cb0860a3cecc67fdf61fe3c5",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BlockEnd.lean",
+   "source_sha256": "7d9479061ef8f46d5f47cb7baad69e01ca20615cd438698f5044a264edc28730",
+   "release_sha256": "5bbe10b7f6a26f234582441d2af370392e3746c9e120007b9d6bde2e97d56d49",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BlockMaps.lean",
+   "source_sha256": "0e28bbd62117be30055c40d5cf7b020c551cb56f4024d597ea4fcf3808ea3c9e",
+   "release_sha256": "3620e5827889571ca4915aa2ba6c83d1fc1b45aea4940c93d2c1ee14d17ac38f",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BlockQuiver.lean",
+   "source_sha256": "ddf34b228fdb93f9793da19c651ac9738700e6891cb315abe98f1c08e541eb53",
+   "release_sha256": "41314f13f25d12c573cfffb2ea82aa4a5079fcdc2d24ad71e2392fe7b12d821c",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BlockSets.lean",
+   "source_sha256": "4ad7678610aa3961e7e0870e248ae340f5b2394316aeb188a80473413d39d2d7",
+   "release_sha256": "513858375576cb5fc651c29a9e54db127db3d0ac5fdbc6810f6ccacec1fef675",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BlockTransport.lean",
+   "source_sha256": "182137afe2bc025e2c6e223022f02effee6c8cedc5275a75d633e737d2331c8d",
+   "release_sha256": "eb2611c060ef0f57afb9ac42c5adfbac59895e3de068d398d7731a8dc4842152",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BlockUnique.lean",
+   "source_sha256": "48cec23482c664d7ce128fcad33b303b97867471d052b7780c117af57540030a",
+   "release_sha256": "2af6942906526d1f634eb4414a2716b5267ebfed4d7853da612c34b388b617d0",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BlockWalks.lean",
+   "source_sha256": "8223976008faf9565de0442e1b12fe5a100346b364ea5482eef6958624353751",
+   "release_sha256": "53c3a920945ed57ad0f412a3bdf921286dc463fc961a7059168d51349bc57ff0",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/BrickPieces.lean",
+   "source_sha256": "6ce2f5decf2b19bc0c45bbe758874b3890a37c52164c8847ff9b7f4cf1638078",
+   "release_sha256": "086976e0a7ebfce7f27d3fd6f32b82628f7a445fe0abd697f145382fa419797e",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Chains.lean",
+   "source_sha256": "3dd78e77086bfeac149e08a0ab2b531eeaa823cb8e7240af57177a7d9c85c7ef",
+   "release_sha256": "3e814219831daf9e75081b4739888154c24e13cea1c7e9f15995e0dc8bbceed6",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/ClosedBand.lean",
+   "source_sha256": "9a3b27d9552fca26043ded0c4c181579f63478c3e128ef9f165e5ccdb735c9f1",
+   "release_sha256": "14868f82c2669d5d4331a4f1afe4e61b9b4fed23dd193541d4b4920b3b581706",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Cons.lean",
+   "source_sha256": "9dcaabe1d6a2bb21b5dcbcc9f0003160634ff9fd6bfff1931b628a83b427bc30",
+   "release_sha256": "d67f485a98dbfdc49161ce91f0d3926329e5896aa9ad6693afe940dc65b16b33",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Counts.lean",
+   "source_sha256": "81a6f9f565575027ebf9be0153eb10ef8d2db4fd9a1e4dc290f64a03badb459f",
+   "release_sha256": "5af67a55e2d48d06c1022082eca41bd5554e8e2876355f4a4e673093fb8c0916",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Coverage.lean",
+   "source_sha256": "41e62657c13f23bb36d335c537ab3e201054c4b0a549c464f092ffce7b659c7a",
+   "release_sha256": "306ecb73924b694fbad04631c6a9a7128740983b290d892ddac24ff4bcf5cc18",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Decompose.lean",
+   "source_sha256": "d4f2c6e95c55d554b5f3ff195f27a0333a874726a5123dd071012c218192f130",
+   "release_sha256": "c2433b20c7b3a3f2b00504126880d9ba7d3ef5918049b73522e797b20ad12d84",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Filtration.lean",
+   "source_sha256": "de7697a4ccc6064fa2fc4252428aa569de230cfd30b0487050ece7bf77303fee",
+   "release_sha256": "cf09cfdd2ce79d1fc4de40872f6b8825a146ff00f0850b6ea9c001c3689e22a0",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/GoodSigns.lean",
+   "source_sha256": "fe4ef85f43b1eb6204cf9dfc7e803609be03734ba4861d71268c77c999ce9114",
+   "release_sha256": "9040f16242aafb6c88ecde047f75fbf5775d8dd1958aabe1eba15192b0e91cd5",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/HWord.lean",
+   "source_sha256": "81fafa84b9024849240cc743e5ffd036739ab018b1edbba57c45a0b18c277bd6",
+   "release_sha256": "0abc67f78337ab8c1f0c576b50b05981e0d02599edfb031c4f8c72bdbe12e991",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/HalfWords.lean",
+   "source_sha256": "242de9344273a6f3cca1e534c43dea6763f2ff0bcb5b891115f5d69cfcfb8dae",
+   "release_sha256": "3d879c65272e8ec035918656762c95ee0173de4342c824bed238ebc4c84e05d3",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Intervals.lean",
+   "source_sha256": "bcf7c896b619ed726a7be3956ad9aa00b373f3822618a894ddfb77cf3d27ae6b",
+   "release_sha256": "a5705649b3a67997e38dfd671f6fec96df03c3c50de0283bcbdf6e8f09744e39",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Jordan.lean",
+   "source_sha256": "bf647b9a07ad875ced510607e857bcd7c440c577000750b442bb7f700aa7c58b",
+   "release_sha256": "30f2bf06e4e80ef25cd6fdf49069d17f01938b946237f69dafd6a4764022e49b",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Natural.lean",
+   "source_sha256": "3c9156fb5353ac0a9d328bf200792788bc9eaa2ddd5c258fd4d4c436253551ae",
+   "release_sha256": "fe2750ee76eb5100bc7b66321b3b3c6d7aea70d18ac221a7a6f9e8fa70280689",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Orbits.lean",
+   "source_sha256": "31df71f789687cfc6f822d9cd4a6577e77b52f23c65f2c6033b2149d199abf50",
+   "release_sha256": "02afc10d7f60179e06ee7cc4efbfbf0fd28a0db6089d4f8f195c1ebb2964b122",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Plamondon.lean",
+   "source_sha256": "f2a2d4683df82d24d9731d5040099b2b9c70578c776b4d78b57fa0f09476a6e1",
+   "release_sha256": "f6fef5de3b041b0ca3f8df2cde8ee88f9baef61372d8d75510dd95b39f339e5c",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Realize.lean",
+   "source_sha256": "c9af25fc7a4f9190a7884eb62a53061385d1f90ddcffb622689b03c175f3d42c",
+   "release_sha256": "31e8c5ce194b3e36874b0371cb80a4e581f7ac65fabe0c9df122de00d61bcfbd",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/RealizeInf.lean",
+   "source_sha256": "e7f5dee555302c8ba6f269940a09af9fb003640f4e5a8e459e8ef4df1fb3645d",
+   "release_sha256": "662f7e319303eb02705990c91a83519b212053f3a596abd1a5cf004f23fddfad",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/RepFinite.lean",
+   "source_sha256": "64101f6936650691ba8132a9a02072e2f84792dfb15fe93b0ecc66ba265ce435",
+   "release_sha256": "4bd249676872b3a28d312516811600cef951e7ab3260d5c28c4fbc0598c5d2dd",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Semicont.lean",
+   "source_sha256": "a6d66d88eb55058881ec92a35571aef8eb7826fc996089611dbc658b88571c8d",
+   "release_sha256": "9c73e78c904d8724d069d81355ca046f6035731386139d3f3e5eab7550557bf1",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Shape2.lean",
+   "source_sha256": "a4013deb804a1134d312e79a224b52512798c701a7642222442744cfac984049",
+   "release_sha256": "983ef956b48430afdf2d5f3d31de505ce751757818cbb15cc32dddd6286f2407",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Shift.lean",
+   "source_sha256": "69398b8240ec2a826bf47412d6239e3aec3fa5474b024a2a69e69c1e80045394",
+   "release_sha256": "6b8444429d9f92629409819531e09bccd1bc999127c7052122dfffa43a41c104",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Signs.lean",
+   "source_sha256": "1936471f86e61e123f35f2cfda7c520cffc253712dd23699ed0b07a56666db0e",
+   "release_sha256": "1baeb7add630972ebd93292acc1fb27c1c220492634e9465d9052b3b7bb13c39",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/StringBQ.lean",
+   "source_sha256": "60fca1abcefcad7a57af1e437ddf61a1458a529c29990d1908e4d594156d48ee",
+   "release_sha256": "58f470d9a3091b336e877b6724ce8bab903ae0fee018a0b782df02f9607c773a",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/StringBand.lean",
+   "source_sha256": "f78b154c96869fdc16c10b7f45f9a0cf24ec3f334e51f4d61acf8b6d7f980a54",
+   "release_sha256": "12b3889281fa8548105b860027dcfcdc66e8a9f3fe8f375e9002494dfc4046b1",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/StringMaps.lean",
+   "source_sha256": "0cdb4510ff4d180934587b8141eb6af35e9152c6e4ca247cca3b2c8dfe7fd910",
+   "release_sha256": "f9e437be8a01d47efac4743fee1f5988b9c795eccbabf3bc36277fbbeaa7bb13",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/StringShift.lean",
+   "source_sha256": "250456721767dd980ee4a326b20d95e3cac4a55f0bdd87d97da7133f939634ad",
+   "release_sha256": "c6ea0fa630af7738118a5dfe4e42dde7b93376e3fde77e7094abc3b8d3afb5ad",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Classification/Transport.lean",
+   "source_sha256": "ae1fc03c611dbd81e76235f616d0b18078c91e2a8163a400c25a37b1cf893550",
+   "release_sha256": "3d58034b3c44659cd2b77ec7b79cdb94d19f7bcd06cb25b5d69c2c94966497b5",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Geometry/KernelVector.lean",
+   "source_sha256": "6bf1cf83ca7c90225ef2ebd036754eb6472475dc48a87f10efde1b491e4c3f62",
+   "release_sha256": "41e05a958ab0200b9feb560c395d9434da2a869ab472b9e1dd041df840e27dd2",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Geometry/OrbitChart.lean",
+   "source_sha256": "ee638aead14006a2959cfd92a382daac268d63f23f6873cfc21bc74bb09b4014",
+   "release_sha256": "d2d2ff26841bca8b6ab9aee96e95824084e3bb92e7c6a4095ac80ddd760f2026",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Geometry/PolyFun.lean",
+   "source_sha256": "ee5d4e5f084a4af70e0407ca7dc20533aab566f2b4d7d0f96bed7faa2b2abfea",
+   "release_sha256": "ceb2bd8f4770d11fd9853bf76548229d005219b1208706385865ceceb5bb4b95",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/MainTheorems.lean",
+   "source_sha256": "54c242ea69a04da9dd0a8e2bfde574af71f3b89c1cbe74f11a9709c64bbc8280",
+   "release_sha256": "3a23cfbb56c0bea6712e3d9d0c885478e10be24d925b93bf9d8566f0b2288508",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Quiver/Classes.lean",
+   "source_sha256": "c378365f97f2b326eb26ed04afee1fa8ddbcf39684ecfa2e4ac88bbd8fdec704",
+   "release_sha256": "e8b255b4b0d1945c321bd63089312c159b9906796bc04eb1f4ccb1b7bd0c7696",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Quiver/CoeffQuiver.lean",
+   "source_sha256": "f895efee6a321e1b3786d3634a5e4f89f261072963391c53b1e87126d1e62af3",
+   "release_sha256": "b23c2824913a8369de1f6115f8d9072063561269c8b97f4d4c54c07153f0ee4d",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Quiver/Monomial.lean",
+   "source_sha256": "00c8f69a07abdcdf99e7529e3991e8f96d6a3a65eea9fc0070def822e39948cb",
+   "release_sha256": "e61244759b69ac1b5455b6bd9d89461e7a8774664da64ffb5cdd9637508638ed",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Quiver/PathData.lean",
+   "source_sha256": "03d8227510008bfeaa2e6f9d470735b9719ed7462f0fe0a19268dd185e13ead1",
+   "release_sha256": "440bc4081d75f49c10f49fc19dfa78c6793abd95b510c888ae90c1459fe57f41",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Quiver/Strings.lean",
+   "source_sha256": "8cf19451c9469801ab2637edea4836c08254bfb52afa8d08fec2db567dfc98f0",
+   "release_sha256": "50d84d49a5cb25edebcf7472a130b5b55fac96875591113c04cb1b6e9a17dd2e",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section2/Cut.lean",
+   "source_sha256": "02b0342a76d497ce43beca4839debbb9dfa7b3becbc29fc888f1076215d37d69",
+   "release_sha256": "3d2f0fa04dc4e8fd2d12b38a75b6a5f2328002e851c477f047c956d857203371",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section2/CutDual.lean",
+   "source_sha256": "4c802744a195f1c760edd68c21468b7ff6b1c057b5919f93e93c98c72e1ebd03",
+   "release_sha256": "596fdd620277ba94ad5228865175944fd36910a16c4679637fbf298691ecfdfc",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section3/Actions.lean",
+   "source_sha256": "1612c65df0d55788577c6e7c68d2e4ecf92e60bc1939f0cf65cd464a6c505bed",
+   "release_sha256": "e802ccf8343631c255def5da1d2a66727f73830fdce04d41829401e33bf4b682",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section3/Chains.lean",
+   "source_sha256": "d280ac454273f513634f6009cc08db377aec046083253248a5cdb7dcbfbd72ff",
+   "release_sha256": "d688d2bdca0f49f339cacf391c5df7866c4f3e1cfb28d311e12c777b6242d886",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section3/DualString.lean",
+   "source_sha256": "5610e4a72f5fe973a5e24a24f8570888d1edab11685f26dc0e91713d0537db19",
+   "release_sha256": "b34cc1f55d05d31507b67c009079ebb40a6fae5af77f8e941a267188b23a2a42",
+   "change": "module system and port edit"
+  },
+  {
+   "path": "BrickAccessibility/Section3/Faithful.lean",
+   "source_sha256": "359bd89055f42dd19e2e1dcafcf19362c096b20fe786b0aae2824849859b4733",
+   "release_sha256": "284434fa5d2b4ed42c9c3d928796346d6005fc20afff700327d8da912a9e7d39",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section3/FaithfulData.lean",
+   "source_sha256": "a3cd208c6def61399cb20003f7d9b8207e28c76890e750fa06a9ba2c08b04ab4",
+   "release_sha256": "1492b51e4704702a09859851b3b68dfde57c9bbe0ac29297b6128b305b22972d",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section3/FaithfulGentle.lean",
+   "source_sha256": "9aa1bff6a2a202a7c301cc2eae39f7bc35b45d9f23233b5ac95b29a2d24125b3",
+   "release_sha256": "99b1f22f56562bbc4908509018827730df10366b7cec1065e8acfdf27e98a0de",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section3/Overlap.lean",
+   "source_sha256": "2796405fb4e332a4ab9526fe821d681467b5bc45ea4df6258f5c9fc507f48c37",
+   "release_sha256": "c352e8ecdaa8f7ef588d529356613e2d18bf60144d49de3ce4266aed09856b84",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section3/OverlapSeg.lean",
+   "source_sha256": "28f7f723ed7fcc6d85d50a65aac2f2a81c6b5241387da117766fe24dbe127192",
+   "release_sha256": "fc8482d8900ffc655c726463772cb12a157a61cb37c8b422838db159969062f5",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section3/SubQuiver.lean",
+   "source_sha256": "db8c08b9fc5c499e89c6bf40ff296422c657f1008b7f7908b6f0bec410b56866",
+   "release_sha256": "d51c5549add3eab4f13fdd55955e7b3f6c794d53dbe253e4800d5c516e52d8a7",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section3/TopSocle.lean",
+   "source_sha256": "76b125fb2fe4ae5c3047c4ea218641ca7e12f2b67873dd79182643703327d771",
+   "release_sha256": "4f5b85f3d331832060ea99571407f1b1e1d7b8ddcf1fd30a860922d2513095c9",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section3/Walks.lean",
+   "source_sha256": "e0b1fc8e820a3f64bd78e8233f213e937a9862a81c8786c298255fe7abb74eb8",
+   "release_sha256": "b1fc1734d7332154bb0e4a4c1cab9ec4e766c7e3b153fdcbaf64a5ece9800d04",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/Closed.lean",
+   "source_sha256": "8fe8cdd06a92a34ddc4177e4029259453fa5d7b049001255bce8889da121b67d",
+   "release_sha256": "794075ce808ba819ad4d3388df466a0f0abaff28a2fc765c2cf480854879e45d",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/Counts.lean",
+   "source_sha256": "05c254731df23772b14e9439e2c6ecab9cc5bf3595f5f8567542aa7ccce7b060",
+   "release_sha256": "313f5e57f2c461271f1fa45a5124df07a6966cdef58dbe252da8b0b222700d81",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/Deficit.lean",
+   "source_sha256": "9edfad95e9860e93c4dfcc4b48b9e5bad74f02941debbd42f4016dd307c7abfc",
+   "release_sha256": "072d6005f02f6e18011f41a1aff74779d97b8c7a384a1527d0aabfce239860f9",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/EndpointFacts.lean",
+   "source_sha256": "fc3433f9fc8f9d2254d54d3d267e19c053791637b56e3096a4b389b696ca47f0",
+   "release_sha256": "eff0af60b41ece5069b3b2404a016628b12648941b1d5ff004034f3f8e392726",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/Equality.lean",
+   "source_sha256": "3d779ab2bdb9818e486a5c058eb0373661724a40f03d38a6bbb0b6c83371342f",
+   "release_sha256": "6bcb453e4020cc5eb2fff40f6df7b0e8183eabd3d4b35a59c9e64d156f2680ee",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/ExtBound.lean",
+   "source_sha256": "969f26d9e97ef3b925abe7d8a1ba117c5cceb1cd4a57f49639938986fc8e2aa3",
+   "release_sha256": "d12d01dd7853f947f0c47b64559d7bbb69a3a64e978ed5be0d31cc3e7b9e05a6",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/ExtBoundDual.lean",
+   "source_sha256": "cabeed4f31692b3a2ea843c4d05b1571529a1d62b9d4cf23171673de3e762ed3",
+   "release_sha256": "1955b55b5bdda3f79d76c5aaf4de9100c7b9b24d26c6746fc6fb42ef7580b3b5",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/ExtExact.lean",
+   "source_sha256": "863c0e352476d3172e04815ce12aee3d0cc4b0b40970aa3d773675b8a4c343c0",
+   "release_sha256": "e45305d3094dbd072ed8fb582f0df1f6cc3cd6b94d0574aa8c24db21ac108354",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/Extending.lean",
+   "source_sha256": "daf1bd2df223d063a946649140aaf641ec0bb533b0f4a7dfda15a7dfb478be8b",
+   "release_sha256": "f606ca63ceb090ec8c16e939c493454465f655da09a15ca87e26ffe8e7bbbceb",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/Gentle.lean",
+   "source_sha256": "019d224fb2e97a16aa68edf695a43b52ee805ec269309adcd760c5b16727e16d",
+   "release_sha256": "065d3b4d12f0799833868df34da97fa65c72cf8ee609c6df19711816d1e6a9c8",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/Inequality.lean",
+   "source_sha256": "bc62fa4730e41980c0723d1279ba9241a5a343b9e374c466af9f886dfa85eff4",
+   "release_sha256": "3c0de6b617685bd9799ab8cb664e01aa7d2fce6492165bedaced4b9d7e407b9b",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/Normalize.lean",
+   "source_sha256": "6dec83d3a25b29104bd1b631e1dc19aead0d6eca07105b70157ccfa14c9b7ed6",
+   "release_sha256": "7a31171db82a2740ba27d0173a7f793a1a9b246b3077ecc975b65f189668deb7",
+   "change": "module system and port edit"
+  },
+  {
+   "path": "BrickAccessibility/Section4/Positive.lean",
+   "source_sha256": "4024ec25b838919a6c7f95d77fee7ce6090582788c452edb2868b63fe4a67c7f",
+   "release_sha256": "3a6c13ec542a51ec0d7fe3376f926ee7a7bb3d903f07ed27115c1e9564647269",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/Shapes.lean",
+   "source_sha256": "9384050a1461b04658f4e4b06d65eb38012f6f2f9c09e528f1cb24c57be0b4c1",
+   "release_sha256": "9fa7e3f5a458516d527fbc14c563350af9e8b8cc1cb281fb1602e4cd7cd7e899",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/Simple.lean",
+   "source_sha256": "2a02c6b385bef3c58af36351d9d9be2ae9b3182ef19b13186a50772448fe641e",
+   "release_sha256": "513e39ae48eb4643007986e56e7e49f61d6b4d9d6d9854f25b440ddd1c6dec4f",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section4/StringLocal.lean",
+   "source_sha256": "a77d0475d16727537d8bb7f3e91bed984913fdc39fd27300dfff4afd0865c516",
+   "release_sha256": "d38e6ea5e9dc16b2f9746473a15d49626f002b07dea25932acc10d6cc6e8cc16",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section5/Individual.lean",
+   "source_sha256": "fd8470944cc705d3283aa583ed1b6653a868134f6b98698ee902388f6bc5234a",
+   "release_sha256": "41e0f2c93e340b3971837f6d69447915f4944dfc828ce98ec0ebf31731d9d839",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Section5/Main.lean",
+   "source_sha256": "37959bd122554554c3632d9c47f6ecdbae5f269a852c397ddc5a821089eeb27f",
+   "release_sha256": "8f122bba49054bd736f60f8c2ca5d2fc7869034c73c5f8caf35063e12d3daa4b",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/SkowWasch/Arrows.lean",
+   "source_sha256": "5e53a78856db08a4680ed15aae9e0a7e049000d69cfcc43d7b4a1a2704359ed7",
+   "release_sha256": "58afc6b9328ddaafadd9c6feb25686977f4477d9746613a3555bee3296e956f2",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/SkowWasch/Assemble.lean",
+   "source_sha256": "fc8a8e8781dad529ce534247368d671d0f31057961192a0f3ac7d2ca580dd22b",
+   "release_sha256": "53c5f2c28af6c02f8526eae28c80c64e3e42ac4144d141f79923f526ad4ec0c6",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/SkowWasch/Basic.lean",
+   "source_sha256": "1295f53630f52b5f1911cb572a63de057487331a1d421faabed6ab7225a7a5b7",
+   "release_sha256": "9f60eeb7863e808f094ec167f4d0e436a06a6b7fddc11e01930917b99a49892e",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/SkowWasch/Biserial.lean",
+   "source_sha256": "561bd821fc05db02e3d30806b81f18a2517bfdbd1e782ec44d978db7a7463828",
+   "release_sha256": "d8220d2d0ca7bff5cc207a1b9764009f148ce088a6ffd3ff962906e08aba4922",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/SkowWasch/BiserialModule.lean",
+   "source_sha256": "a9fe9586264e6e48959cbb6d998018c554daad6debd512a41c788346034f5acd",
+   "release_sha256": "92f5da695ed11bedafc78129784d4ce236a5c15f55bf4cf5abbf9e33f0e60cc1",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/SkowWasch/Existence.lean",
+   "source_sha256": "130df05dc770f0fd8b87893f8b8f100d69d6cab783c89525b93f98046aeb9ac9",
+   "release_sha256": "049b1b27a0e0cb215301ad63afd51164a884a442130300ace61266692b0e4d71",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/SkowWasch/Jans.lean",
+   "source_sha256": "fb93d1caef2e7c56211cbab1223e943812c718a90c3ee588a0163a1dac046f18",
+   "release_sha256": "ff8ce8c65a8ff810868fddcf71ef3083ffb9352d4bb311f5db95c7d6dd56e0d2",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/SkowWasch/Kupisch.lean",
+   "source_sha256": "20eee524af14fb2e68297133fe8b34ccde55298e51f15b4e46b7a896e1d982ae",
+   "release_sha256": "74dea0b0540ca1d74cc83c6b4890004d202295bab026f6b802106ba4c897027b",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/SkowWasch/Local.lean",
+   "source_sha256": "e56d7d4fd769aaaf48222e685a4cb580f1f22243d443ef8e2114cb3462e30ecb",
+   "release_sha256": "e6af8f755d95fe21c9edafe2a31ea95f14f4de5e18f764b5c91d403e0dd81743",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/SkowWasch/Opposite.lean",
+   "source_sha256": "39bcf64e6c8436a209dc28c4ab70b2f5d631a8a3cfeed00804ab7dda4e154330",
+   "release_sha256": "4f86f11f3b81a01af0608ad293a05267e8a78807db6540f4671789d721f4a021",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/SkowWasch/Procedure.lean",
+   "source_sha256": "713f26b986a80a9931006761dc71b34916030fb0e6af60ac21a88733eff5eb1c",
+   "release_sha256": "3062f278d92a1ad77ddaf905cd67390b2d69a92f784fcb2025351badf3ca0150",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/Statement.lean",
+   "source_sha256": "804d9e6d3a23a602291fe541e0b12792ff12a774ec63cd3fd9bcd7e77850c077",
+   "release_sha256": "cafe229cc4e1ace52bad4b334716969ec25213d02c8e13c8047eadfac09e0afd",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/StringQuotient/Chains.lean",
+   "source_sha256": "26d3f6002b590134d3a0de1582675255d8d632eea60fb17b13a1070768bb1300",
+   "release_sha256": "8920f5f9b52caa747664136d8caf3503a5f90c546b2e53f3e0be35ea45573d2d",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/StringQuotient/Exact.lean",
+   "source_sha256": "60ab6c23d7adef17dee67d9d9c000654eff19eac9e068648e7e82397713d66c3",
+   "release_sha256": "fdc3a02088eef4c2f3bc5f9f4717fa4492716377a21f7c111ef7a0a9714f16bc",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/StringQuotient/Ideal.lean",
+   "source_sha256": "cd0985e62b94b68a09ec2d5dfb79cc35cf3e126bf205d6c3678b9d71d930f93b",
+   "release_sha256": "1450f768a1f70fdce467b23ca417fceedd8a12db71d674ea663d365dcad9d394",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/StringQuotient/Key.lean",
+   "source_sha256": "f2830a73295b7adc610a4568b9f3aa134d484448f9adc6df97bd8fbb4a4b0a9d",
+   "release_sha256": "23c8d7ca921c6aac63ab7d7e3bdd397aab9dbb55bc5c8076448624d69d8e2d7c",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/StringQuotient/Opposite.lean",
+   "source_sha256": "87260f3ac1879dde3bd889fcdd66fbc3a8bd8027159ed9867948d2e504a214a7",
+   "release_sha256": "b0b202df5a7b3fefe4aababb1ac4cba0f7104c363ed4438a1968dc5c193fa505",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/StringQuotient/Projective.lean",
+   "source_sha256": "eb043dfbf3b244d1deea5db6111b9411d46517eea50a615f362208f03c1dd42a",
+   "release_sha256": "8dbd73dcab26c2663fabf0964c6a30a5e73387c78e2383a1f4b8e181412cfa28",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/StringQuotient/Socle.lean",
+   "source_sha256": "1f613eb2597c120e69d274cb56af1299ad811245ac758b925ef3c0beeada58a3",
+   "release_sha256": "54eb4640d258c32c6ddd878e4eb05f24c3dbb4fda72afdc4d717d4bb7a9b5a23",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility/StringQuotient/SubQuiver.lean",
+   "source_sha256": "1a29b1c8036950a5a5ba80a3dbf829ab6293219642489519c35897a7aad26372",
+   "release_sha256": "d30c38412ab0086995a056bbac054500943e76ae242023fa022e1fa00a7795a2",
+   "change": "module system"
+  },
+  {
+   "path": "BrickAccessibility.lean",
+   "source_sha256": "ef9ae17a671646ef356f2880e7c20536b9c4c55f59688c06435973c0d75f2cfa",
+   "release_sha256": "79310726186ce7c5cf8072af15bfc47e2876f7bab71e95b184ab85b6305c7339",
+   "change": "module system"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+name = "brick_accessibility_docbuild"
+version = "0.1.0"
+
+[[require]]
+name = "doc-gen4"
+git = "https://github.com/leanprover/doc-gen4"
+rev = "20b0edcaf3d2882fe2c906158e79f2f5dbebe57c"
+
+[[require]]
+name = "brick_accessibility"
+path = ".."
