@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-29",
+  "command": "./scripts/verify-comparator.sh",
+  "toolchain": "leanprover/lean4:v4.35.0-rc3",
+  "mathlib": "c55e6e786f49471c72fbddbec5415808896aec1e",
+  "source_commit": "ae2ee80e5dc85d6b5e6b11ab951d9e2059b6c5e4",
+  "kernels": [
+    "Lean default kernel",
+    "nanoda (toolchain bundle)",
+    "con-ron (toolchain bundle)"
+  ],
+  "sandbox": "bwrap bubblewrap 0.6.1 from the Ubuntu 22.04 package bubblewrap 0.6.1-1ubuntu0.3, extracted without installation; unprivileged user namespaces",
+  "result": "Your solution is okay!",
+  "con_ron_declarations": 30402,
+  "wall_time": "2 min 6 s",
+  "challenge_sha256": "32ad3faa2f6ab8745d7b6303fa6016b9855d2b76c8c54dc68422505456945fac",
+  "solution_sha256": "5cf949579eb4165f047f0c452b068b01cf49cdbe8ab8bd8d3d6fb1e57545d9b9",
+  "comparator_json_sha256": "3b69dbd5935296d376aae87b63aaf0dd16bed411ede3de8419188ced46d6bf42",
+  "theorems": [
+    "BrickAccessibility.Challenge.theoremA",
+    "BrickAccessibility.Challenge.corollaryB",
+    "BrickAccessibility.Challenge.corollaryBiserial"
+  ]
+}

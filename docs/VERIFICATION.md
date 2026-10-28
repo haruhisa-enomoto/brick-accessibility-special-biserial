@@ -36,7 +36,7 @@ presentation, used for Corollary 5.6).
 | Fresh build (no project artifacts, Mathlib prebuilt at the pinned commit) | 2347 jobs including Challenge and Solution, 3 min 30 s, largest process 1.7 GB |
 | Axiom audit, `scripts/AxiomAudit.lean` | 19 declarations, including the three Challenge theorems proved in Solution; only `propext`, `Classical.choice`, `Quot.sound`; a scan of all 2921 declarations (`scripts/ScanAxioms.lean`) finds no other axiom |
 | API generation (doc-gen4) and website check | 120 modules, 4 min 33 s; 133 pages, all local targets present, displayed Challenge matches |
-| `lake comparator` on Challenge and Solution | not yet run: `bwrap` (bubblewrap) is not installed on the build machine |
+| `lake comparator` on Challenge and Solution (`scripts/verify-comparator.sh`, in a `bwrap` sandbox) | statement match, axiom boundary, con-ron (30402 declarations), NanoDa and Lean kernel replay passed; 2 min 6 s |
 
 The [record](../verification/2026-10-29/README.md) gives the hashes. These are
 local runs, not a hosted Palomar preflight or registry acceptance.

@@ -12,7 +12,7 @@ system, and two files have port edits (a Mathlib rename and a direct import).
 | Fresh build | no project artifacts, Mathlib prebuilt at the pinned commit: 2347 jobs including Challenge and Solution, 3 min 30 s, largest process 1.7 GB, no `sorry` outside the three Challenge placeholders |
 | Axiom audit | [`axioms.log`](axioms.log), [`axioms.json`](axioms.json): 19 queried declarations with only `propext`, `Classical.choice`, `Quot.sound`; `scripts/ScanAxioms.lean` scans all 2921 declarations of the library and Solution and finds no other axiom |
 | API generation (doc-gen4) and website check | 120 modules, 4 min 33 s; 133 pages, all local targets present, displayed Challenge matches |
-| `lake comparator` | not run: `bwrap` (bubblewrap) is not installed on the build machine |
+| `lake comparator` | [`comparator.json`](comparator.json), [`comparator.log`](comparator.log): `scripts/verify-comparator.sh` in a `bwrap` sandbox; statement match, axiom boundary, con-ron, NanoDa and Lean kernel replay passed |
 
 | File | SHA-256 |
 | --- | --- |
