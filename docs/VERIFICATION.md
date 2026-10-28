@@ -33,8 +33,8 @@ presentation, used for Corollary 5.6).
 | Check | Result |
 | --- | --- |
 | Lean source check (`scripts/check-lean-sources.py`) | every file uses the module system and has at most 10,000 lines |
-| Fresh build (no project artifacts, Mathlib prebuilt at the pinned commit) | FRESH_BUILD |
-| Axiom audit, `scripts/AxiomAudit.lean` | 19 declarations, including the three Challenge theorems proved in Solution; only `propext`, `Classical.choice`, `Quot.sound` |
+| Fresh build (no project artifacts, Mathlib prebuilt at the pinned commit) | 2347 jobs including Challenge and Solution, 3 min 30 s, largest process 1.7 GB |
+| Axiom audit, `scripts/AxiomAudit.lean` | 19 declarations, including the three Challenge theorems proved in Solution; only `propext`, `Classical.choice`, `Quot.sound`; a scan of all 2921 declarations (`scripts/ScanAxioms.lean`) finds no other axiom |
 | `lake comparator` on Challenge and Solution | not yet run: `bwrap` (bubblewrap) is not installed on the build machine |
 
 The [record](../verification/2026-10-29/README.md) gives the hashes. These are
