@@ -23,7 +23,7 @@ Generate the API first through the separate [docbuild project](../docbuild/READM
 
 ## Publish
 
-The intended public URL is
+The public URL is
 <https://haruhisa-enomoto.github.io/brick-accessibility-special-biserial/>.
 Repository **Settings → Pages → Source** must be **GitHub Actions**. After
 committing and pushing source changes to `main`, run

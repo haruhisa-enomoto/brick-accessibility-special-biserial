@@ -1,5 +1,6 @@
 # Brick accessibility for brick-finite special biserial algebras
 
+[Website](https://haruhisa-enomoto.github.io/brick-accessibility-special-biserial/) ·
 [Manuscript](docs/MANUSCRIPT.md) ·
 [Main theorems in Lean](BrickAccessibility/MainTheorems.lean) ·
 [Independent statement](BrickAccessibility/Statement.lean) ·
@@ -107,8 +108,10 @@ mechanical verification for a chosen commit.
 
 ## Website
 
-The [website sources](website/README.md) present the theorems, the independent
-statement, a proof guide and the searchable Lean API.
+The [website](https://haruhisa-enomoto.github.io/brick-accessibility-special-biserial/)
+presents the theorems, the independent statement, a proof guide and the
+searchable Lean API. See [website/README.md](website/README.md) for building and
+publishing it.
 
 ## Provenance
 
