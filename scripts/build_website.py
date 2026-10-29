@@ -33,7 +33,6 @@ def main():
     statement = (ROOT / "Challenge.lean").read_text()
     output = ROOT / "_site"
     output.mkdir(exist_ok=True)
-    shutil.copyfile(ROOT / "docs/manuscript/main.pdf", output / "paper.pdf")
     shutil.copytree(ROOT / "website/assets", output / "assets", dirs_exist_ok=True)
     api = ROOT / "docbuild/.lake/build/doc"
     api_state_path = ROOT / "docbuild/.lake/build/api-build.json"
@@ -74,7 +73,7 @@ def main():
         "verification_status": html.escape(status.get("summary", "Verification records are available in the repository.")),
     }
     nav = "".join(f'<a href="{slug}.html">{label}</a>' for slug, label in PAGES.items())
-    nav += f'<a href="paper.pdf">Paper PDF</a><a href="{repo_url}">GitHub</a>'
+    nav += f'<a href="{repo_url}">GitHub</a>'
     revision = f'<a href="{repo_url}/tree/{commit}">{commit[:7]}</a>' + (" (preview)" if dirty else "")
     api_revision = (f' · API: <a href="{repo_url}/tree/{api_state["source_commit"]}">{api_state["source_commit"][:7]}</a>') if has_api else ""
     for slug, title in PAGES.items():

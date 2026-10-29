@@ -19,7 +19,7 @@ system, and two files have port edits (a Mathlib rename and a direct import).
 | `Challenge.lean` | `32ad3faa2f6ab8745d7b6303fa6016b9855d2b76c8c54dc68422505456945fac` |
 | `Solution.lean` | `5cf949579eb4165f047f0c452b068b01cf49cdbe8ab8bd8d3d6fb1e57545d9b9` |
 | `comparator.json` | `3b69dbd5935296d376aae87b63aaf0dd16bed411ede3de8419188ced46d6bf42` |
-| `docs/manuscript/main.tex` | `36defd3e07e4f4628ada451d39788f6ae9c6d5b2a3a320819cfca5a00506be5a` |
-| `docs/manuscript/main.pdf` | `cfc7e7324c94ac801671471f5d8e87f8bd044f4696fd6285369f2efcd852f7ef` |
+| manuscript `main.tex` (not distributed) | `36defd3e07e4f4628ada451d39788f6ae9c6d5b2a3a320819cfca5a00506be5a` |
+| manuscript `main.pdf` (not distributed) | `cfc7e7324c94ac801671471f5d8e87f8bd044f4696fd6285369f2efcd852f7ef` |
 
 These are local runs, not a hosted Palomar preflight or registry acceptance.

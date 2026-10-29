@@ -1,8 +1,7 @@
 # Mathematical website
 
 The site presents Theorem A, Corollary B and Corollary 5.6, the independent
-statement, a proof guide and the searchable Lean API. It also serves the
-manuscript PDF at `paper.pdf`.
+statement, a proof guide and the searchable Lean API.
 
 | Page | Content |
 | --- | --- |

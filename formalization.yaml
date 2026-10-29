@@ -30,10 +30,11 @@ sources:
   - title: "Brick accessibility for brick-finite special biserial algebras"
     authors: ["OpenAI Codex (GPT-6)"]
     type: "paper"
-    location: "docs/manuscript/ (revision of October 18, 2026, unpublished manuscript)"
+    location: "Unpublished manuscript, revision of October 18, 2026; not publicly available. SHA-256 of the source: 36defd3e07e4f4628ada451d39788f6ae9c6d5b2a3a320819cfca5a00506be5a; see docs/MANUSCRIPT.md"
     relationship: "formalizes"
     note: >-
       The formalized manuscript, written under Haruhisa Enomoto's direction.
+      It is unpublished and may be revised before publication.
       Statements are matched with Lean declarations in
       docs/PAPER-CORRESPONDENCE.md. Some Lean proofs take different routes
       than the manuscript; the correspondence records them.

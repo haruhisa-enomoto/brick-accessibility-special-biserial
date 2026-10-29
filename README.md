@@ -1,6 +1,6 @@
 # Brick accessibility for brick-finite special biserial algebras
 
-[Paper](docs/manuscript/main.pdf) ·
+[Manuscript](docs/MANUSCRIPT.md) ·
 [Main theorems in Lean](BrickAccessibility/MainTheorems.lean) ·
 [Independent statement](BrickAccessibility/Statement.lean) ·
 [Paper correspondence](docs/PAPER-CORRESPONDENCE.md)
@@ -113,6 +113,6 @@ statement, a proof guide and the searchable Lean API.
 ## Provenance
 
 See [PROVENANCE.md](PROVENANCE.md) for the source of the Lean files, the
-manuscript snapshot and contributions. No source is vendored from other
+formalized manuscript and contributions. No source is vendored from other
 projects ([VENDORED.md](VENDORED.md)). Licensed under the
 [Apache License 2.0](LICENSE).

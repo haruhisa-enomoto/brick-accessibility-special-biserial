@@ -1,11 +1,12 @@
 # Provenance
 
 The Lean development is maintained by Haruhisa Enomoto. It formalizes the
-manuscript *Brick accessibility for brick-finite special biserial algebras*;
-the [manuscript snapshot](docs/manuscript/README.md) is the revision of
-October 18, 2026, frozen at commit
+unpublished manuscript *Brick accessibility for brick-finite special biserial
+algebras*, revision of October 18, 2026, as frozen at commit
 `62a219c8e4fdba2484fe6c84c52e06e814f100fa` of the private research repository
 `homological-conjectures` (the TeX source last changed at `3fdea5c50`). The
+manuscript is not distributed here; [docs/MANUSCRIPT.md](docs/MANUSCRIPT.md)
+identifies the revision by hash. The
 [correspondence](docs/PAPER-CORRESPONDENCE.md) describes formal coverage.
 
 The Lean sources originate in `formalization/brick_accessibility` of the same
