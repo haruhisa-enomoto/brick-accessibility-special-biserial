@@ -1,0 +1,659 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>BrickAccessibility.Classification.Orbits</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="BrickAccessibility.Classification.Orbits";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Brick accessibility</a></span></h1><h2 class="header_filename break_within"><span class="name">BrickAccessibility</span>.<span class="name">Classification</span>.<span class="name">Orbits</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.35.0-rc3/src/Init.lean">Init</a></li><li><a href="../.././BrickAccessibility/Classification/RealizeInf.html">BrickAccessibility.Classification.RealizeInf</a></li><li><a href="../.././BrickAccessibility/Classification/StringShift.html">BrickAccessibility.Classification.StringShift</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-BrickAccessibility.Classification.Orbits" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.HWord.cons_inj"><span class="name">BrickAccessibility</span>.<span class="name">HWord</span>.<span class="name">cons_inj</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.Pair"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Pair</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.Pair.swap"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Pair</span>.<span class="name">swap</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.Pair.swap_swap"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Pair</span>.<span class="name">swap_swap</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.Signs.Step"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Signs</span>.<span class="name">Step</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.Signs.Orbit"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Signs</span>.<span class="name">Orbit</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.Signs.Orbit.equivalence"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Signs</span>.<span class="name">Orbit</span>.<span class="name">equivalence</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.Signs.mem_of_orbit"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Signs</span>.<span class="name">mem_of_orbit</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.Signs.orbit_iff_of_closed"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Signs</span>.<span class="name">orbit_iff_of_closed</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.Signs.step_unique"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Signs</span>.<span class="name">step_unique</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.Word.pairAt"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">pairAt</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.Word.Pos"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">Pos</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.Word.pairAt_swap"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">pairAt_swap</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.Word.half_self"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">half_self</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.Word.half_not"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">half_not</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.Word.step_succ"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">step_succ</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.Word.step_pred"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">step_pred</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.Word.pos_step"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">pos_step</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.Word.pos_swap"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">pos_swap</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.Word.pos_conn"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">pos_conn</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.Word.orbit_iff"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">orbit_iff</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.CWord.pairAt"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">pairAt</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.CWord.Pos"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">Pos</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.CWord.pairAt_swap"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">pairAt_swap</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.CWord.bhalf_self"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">bhalf_self</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.CWord.bhalf_not"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">bhalf_not</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.CWord.step_succ"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">step_succ</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.CWord.step_pred"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">step_pred</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.CWord.pos_step"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">pos_step</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.CWord.pos_swap"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">pos_swap</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.CWord.pos_conn"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">pos_conn</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.CWord.orbit_iff"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">orbit_iff</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Orbits-of-pairs-of-half-words" class="markdown-heading">Orbits of pairs of half-words <a class="hover-link" href="#Orbits-of-pairs-of-half-words">#</a></h1><p>A pair <code>(v, s, h, h')</code> of half-words shifts across the first letter <code>l</code> of <code>h</code> to
+<code>(l.tgt, !ε l, h₁, l⁻¹ h')</code> (<code><a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Step">Signs.Step</a></code>), and swaps to <code>(v, !s, h', h)</code>. The
+pairs at the positions of a string or a band form exactly one orbit of the
+generated equivalence (<code><a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.orbit_iff">Word.orbit_iff</a></code>, <code><a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.orbit_iff">CWord.orbit_iff</a></code>).</p></div><div class="decl" id="BrickAccessibility.HWord.cons_inj"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L29-L44">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.HWord.cons_inj"><span class="name">BrickAccessibility</span>.<span class="name">HWord</span>.<span class="name">cons_inj</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">Q</span> : <a href="../.././BrickAccessibility/Statement.html#BrickAccessibility.Statement.FinQuiver">Statement.FinQuiver</a>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">l </span><span class="fn">l'</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Letter">Letter</a> <span class="fn">Q</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">h </span><span class="fn">h'</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/HWord.html#BrickAccessibility.HWord">HWord</a> <span class="fn">Q</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">e</span> : <span class="fn"><span class="fn"><a href="../.././BrickAccessibility/Classification/Cons.html#BrickAccessibility.HWord.cons">cons</a> <span class="fn">l</span> <span class="fn">h</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././BrickAccessibility/Classification/Cons.html#BrickAccessibility.HWord.cons">cons</a> <span class="fn">l'</span> <span class="fn">h'</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">l</span> <span class="fn">=</span> <span class="fn">l'</span></span> <span class="fn">∧</span> <span class="fn"><span class="fn">h</span> <span class="fn">=</span> <span class="fn">h'</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.MonomialData.Pair"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L50-L51">source</a></div><div class="attributes">@[reducible, inline]</div>
+<div class="decl_header"><span class="decl_kind">abbrev</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Pair</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Type</a></div></div><p>A pair of half-words at a vertex, with the sign of the first one.</p><details id="instances-for-list-BrickAccessibility.MonomialData.Pair" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.MonomialData.Pair.swap"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L53-L54">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair.swap"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Pair</span>.<span class="name">swap</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span></div></div><p>Swapping the two half-words.</p><details id="instances-for-list-BrickAccessibility.MonomialData.Pair.swap" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.MonomialData.Pair.swap_swap"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L56-L57">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair.swap_swap"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Pair</span>.<span class="name">swap_swap</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair.swap">swap</a></span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair.swap">swap</a></span> <span class="fn">=</span> <span class="fn">P</span></span></div></div></div></div><div class="decl" id="BrickAccessibility.MonomialData.Signs.Step"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L59-L62">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Step"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Signs</span>.<span class="name">Step</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P </span><span class="fn">P'</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>The shift across the first letter of the first half-word.</p><details id="instances-for-list-BrickAccessibility.MonomialData.Signs.Step" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.MonomialData.Signs.Orbit"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L64-L66">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Orbit"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Signs</span>.<span class="name">Orbit</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span> → <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span> → <a href="../.././foundational_types.html">Prop</a></span></div></div><p>The orbit relation of pairs.</p><details id="instances-for-list-BrickAccessibility.MonomialData.Signs.Orbit" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.MonomialData.Signs.Orbit.equivalence"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L68-L68">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Orbit.equivalence"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Signs</span>.<span class="name">Orbit</span>.<span class="name">equivalence</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Equivalence</span> <span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Orbit">Orbit</a></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.MonomialData.Signs.mem_of_orbit"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L70-L92">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.mem_of_orbit"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Signs</span>.<span class="name">mem_of_orbit</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">T</span> : <span class="fn"><span class="fn">Set</span> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hstep</span> : <span class="fn">∀ <span class="fn">P</span> ∈ <span class="fn">T</span>, <span class="fn">∀ (<span class="fn">P'</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Step">Step</a></span> <span class="fn">P</span> <span class="fn">P'</span></span> → <span class="fn"><span class="fn">P'</span> <span class="fn">∈</span> <span class="fn">T</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hswap</span> : <span class="fn">∀ <span class="fn">P</span> ∈ <span class="fn">T</span>, <span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair.swap">swap</a></span> <span class="fn">∈</span> <span class="fn">T</span></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P </span><span class="fn">P'</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Orbit">Orbit</a></span> <span class="fn">P</span> <span class="fn">P'</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">P</span> <span class="fn">∈</span> <span class="fn">T</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn">P'</span> <span class="fn">∈</span> <span class="fn">T</span></span></span></div></div><p>A set of pairs closed under shifts and swaps is a union of orbits.</p></div></div><div class="decl" id="BrickAccessibility.MonomialData.Signs.orbit_iff_of_closed"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L94-L103">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.orbit_iff_of_closed"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Signs</span>.<span class="name">orbit_iff_of_closed</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">T</span> : <span class="fn"><span class="fn">Set</span> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hstep</span> : <span class="fn">∀ <span class="fn">P</span> ∈ <span class="fn">T</span>, <span class="fn">∀ (<span class="fn">P'</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>), <span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Step">Step</a></span> <span class="fn">P</span> <span class="fn">P'</span></span> → <span class="fn"><span class="fn">P'</span> <span class="fn">∈</span> <span class="fn">T</span></span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hswap</span> : <span class="fn">∀ <span class="fn">P</span> ∈ <span class="fn">T</span>, <span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair.swap">swap</a></span> <span class="fn">∈</span> <span class="fn">T</span></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P₀</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hconn</span> : <span class="fn">∀ <span class="fn">P</span> ∈ <span class="fn">T</span>, <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Orbit">Orbit</a></span> <span class="fn">P₀</span> <span class="fn">P</span></span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hP</span> : <span class="fn"><span class="fn">P</span> <span class="fn">∈</span> <span class="fn">T</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P'</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Orbit">Orbit</a></span> <span class="fn">P</span> <span class="fn">P'</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn">P'</span> <span class="fn">∈</span> <span class="fn">T</span></span></span></div></div><p>A set closed under shifts and swaps and contained in one orbit is the orbit of each of
+its members.</p></div></div><div class="decl" id="BrickAccessibility.MonomialData.Signs.step_unique"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L105-L110">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.step_unique"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">Signs</span>.<span class="name">step_unique</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P </span><span class="fn">P' </span><span class="fn">P''</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h1</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Step">Step</a></span> <span class="fn">P</span> <span class="fn">P'</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h2</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Step">Step</a></span> <span class="fn">P</span> <span class="fn">P''</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">P'</span> <span class="fn">=</span> <span class="fn">P''</span></span></div></div></div></div><div class="decl" id="BrickAccessibility.Word.pairAt"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L120-L122">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.pairAt"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">pairAt</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word">Word</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">Fin</span> <span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word.len">len</a></span> <span class="fn">+</span> <span class="fn">1</span>)</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">Bool</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span></div></div><p>The pair at a position of a string, with a chosen sign.</p><details id="instances-for-list-BrickAccessibility.Word.pairAt" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.Word.Pos"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L124-L125">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.Pos"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">Pos</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word">Word</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Set</span> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span></span></div></div><p>The pairs at the positions of a string.</p><details id="instances-for-list-BrickAccessibility.Word.Pos" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.Word.pairAt_swap"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L127-L128">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.pairAt_swap"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">pairAt_swap</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word">Word</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">Fin</span> <span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word.len">len</a></span> <span class="fn">+</span> <span class="fn">1</span>)</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">Bool</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.pairAt">pairAt</a></span> <span class="fn">S</span> <span class="fn">q</span> <span class="fn">s</span>)</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair.swap">swap</a></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.pairAt">pairAt</a></span> <span class="fn">S</span> <span class="fn">q</span> <span class="fn"><span class="fn">!</span><span class="fn">s</span></span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.Word.half_self"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L130-L131">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.half_self"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">half_self</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word">Word</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">Fin</span> <span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word.len">len</a></span> <span class="fn">+</span> <span class="fn">1</span>)</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/StringBQ.html#BrickAccessibility.Word.half">half</a></span> <span class="fn">S</span> <span class="fn">q</span> <span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/StringBQ.html#BrickAccessibility.Word.sideSign">sideSign</a></span> <span class="fn">S</span> <span class="fn">q</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/StringBQ.html#BrickAccessibility.Word.right">right</a></span> <span class="fn">q</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.Word.half_not"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L133-L134">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.half_not"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">half_not</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word">Word</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">Fin</span> <span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word.len">len</a></span> <span class="fn">+</span> <span class="fn">1</span>)</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/StringBQ.html#BrickAccessibility.Word.half">half</a></span> <span class="fn">S</span> <span class="fn">q</span> <span class="fn"><span class="fn">!</span><span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/StringBQ.html#BrickAccessibility.Word.sideSign">sideSign</a></span> <span class="fn">S</span> <span class="fn">q</span></span></span>)</span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/StringBQ.html#BrickAccessibility.Word.left">left</a></span> <span class="fn">q</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.Word.step_succ"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L137-L149">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.step_succ"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">step_succ</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word">Word</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hs</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word.IsString">IsString</a> <span class="fn">D</span> <span class="fn">w</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq</span> : <span class="fn"><span class="fn">q</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word.len">len</a></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Step">Step</a></span> <span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.pairAt">pairAt</a></span> <span class="fn">S</span> <span class="fn"><span class="fn">⟨</span><span class="fn">q</span>, <span class="fn">⋯</span><span class="fn">⟩</span></span> <span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/StringBQ.html#BrickAccessibility.Word.sideSign">sideSign</a></span> <span class="fn">S</span> <span class="fn"><span class="fn">⟨</span><span class="fn">q</span>, <span class="fn">⋯</span><span class="fn">⟩</span></span>)</span>)</span> <span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.pairAt">pairAt</a></span> <span class="fn">S</span> <span class="fn"><span class="fn">⟨</span><span class="fn"><span class="fn">q</span> <span class="fn">+</span> <span class="fn">1</span></span>, <span class="fn">⋯</span><span class="fn">⟩</span></span> <span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/StringBQ.html#BrickAccessibility.Word.sideSign">sideSign</a></span> <span class="fn">S</span> <span class="fn"><span class="fn">⟨</span><span class="fn"><span class="fn">q</span> <span class="fn">+</span> <span class="fn">1</span></span>, <span class="fn">⋯</span><span class="fn">⟩</span></span>)</span>)</span></span></div></div></div></div><div class="decl" id="BrickAccessibility.Word.step_pred"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L152-L170">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.step_pred"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">step_pred</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word">Word</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hs</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word.IsString">IsString</a> <span class="fn">D</span> <span class="fn">w</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">ℕ</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hq</span> : <span class="fn"><span class="fn">q</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word.len">len</a></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Step">Step</a></span> <span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.pairAt">pairAt</a></span> <span class="fn">S</span> <span class="fn"><span class="fn">⟨</span><span class="fn"><span class="fn">q</span> <span class="fn">+</span> <span class="fn">1</span></span>, <span class="fn">⋯</span><span class="fn">⟩</span></span> <span class="fn"><span class="fn">!</span><span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/StringBQ.html#BrickAccessibility.Word.sideSign">sideSign</a></span> <span class="fn">S</span> <span class="fn"><span class="fn">⟨</span><span class="fn"><span class="fn">q</span> <span class="fn">+</span> <span class="fn">1</span></span>, <span class="fn">⋯</span><span class="fn">⟩</span></span></span></span>)</span> <span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.pairAt">pairAt</a></span> <span class="fn">S</span> <span class="fn"><span class="fn">⟨</span><span class="fn">q</span>, <span class="fn">⋯</span><span class="fn">⟩</span></span> <span class="fn"><span class="fn">!</span><span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/StringBQ.html#BrickAccessibility.Word.sideSign">sideSign</a></span> <span class="fn">S</span> <span class="fn"><span class="fn">⟨</span><span class="fn">q</span>, <span class="fn">⋯</span><span class="fn">⟩</span></span></span></span>)</span></span></div></div></div></div><div class="decl" id="BrickAccessibility.Word.pos_step"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L173-L197">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.pos_step"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">pos_step</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word">Word</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hs</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word.IsString">IsString</a> <span class="fn">D</span> <span class="fn">w</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hP</span> : <span class="fn"><span class="fn">P</span> <span class="fn">∈</span> <span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.Pos">Pos</a></span> <span class="fn">S</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P'</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Step">Step</a></span> <span class="fn">P</span> <span class="fn">P'</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">P'</span> <span class="fn">∈</span> <span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.Pos">Pos</a></span> <span class="fn">S</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.Word.pos_swap"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L199-L201">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.pos_swap"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">pos_swap</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word">Word</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hP</span> : <span class="fn"><span class="fn">P</span> <span class="fn">∈</span> <span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.Pos">Pos</a></span> <span class="fn">S</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair.swap">swap</a></span> <span class="fn">∈</span> <span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.Pos">Pos</a></span> <span class="fn">S</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.Word.pos_conn"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L204-L227">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.pos_conn"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">pos_conn</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word">Word</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hs</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word.IsString">IsString</a> <span class="fn">D</span> <span class="fn">w</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hP</span> : <span class="fn"><span class="fn">P</span> <span class="fn">∈</span> <span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.Pos">Pos</a></span> <span class="fn">S</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Orbit">Orbit</a></span> <span class="fn">(<span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.pairAt">pairAt</a></span> <span class="fn">S</span> <span class="fn">0</span> <span class="fn">true</span>)</span> <span class="fn">P</span></span></div></div></div></div><div class="decl" id="BrickAccessibility.Word.orbit_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L230-L233">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.orbit_iff"><span class="name">BrickAccessibility</span>.<span class="name">Word</span>.<span class="name">orbit_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">w</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word">Word</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hs</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Word.IsString">IsString</a> <span class="fn">D</span> <span class="fn">w</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hP</span> : <span class="fn"><span class="fn">P</span> <span class="fn">∈</span> <span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.Pos">Pos</a></span> <span class="fn">S</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P'</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Orbit">Orbit</a></span> <span class="fn">P</span> <span class="fn">P'</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn">P'</span> <span class="fn">∈</span> <span class="fn"><span class="fn"><span class="fn">w</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.Word.Pos">Pos</a></span> <span class="fn">S</span></span></span></span></div></div><p>The positions of a string form one orbit.</p></div></div><div class="decl" id="BrickAccessibility.CWord.pairAt"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L245-L246">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.pairAt"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">pairAt</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord">CWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">Fin</span> <span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.n">n</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">Bool</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span></div></div><p>The pair at a position of a band, with a chosen sign.</p><details id="instances-for-list-BrickAccessibility.CWord.pairAt" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.CWord.Pos"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L248-L249">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.Pos"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">Pos</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord">CWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Set</span> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span></span></div></div><p>The pairs at the positions of a band.</p><details id="instances-for-list-BrickAccessibility.CWord.Pos" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.CWord.pairAt_swap"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L251-L252">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.pairAt_swap"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">pairAt_swap</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord">CWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">Fin</span> <span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.n">n</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">Bool</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.pairAt">pairAt</a> <span class="fn">S</span> <span class="fn">b</span> <span class="fn">q</span> <span class="fn">s</span>)</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair.swap">swap</a></span> <span class="fn">=</span> <span class="fn"><a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.pairAt">pairAt</a> <span class="fn">S</span> <span class="fn">b</span> <span class="fn">q</span> <span class="fn"><span class="fn">!</span><span class="fn">s</span></span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.CWord.bhalf_self"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L254-L255">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.bhalf_self"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">bhalf_self</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord">CWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">Fin</span> <span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.n">n</a></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././BrickAccessibility/Classification/BandWalks.html#BrickAccessibility.CWord.bhalf">bhalf</a> <span class="fn">S</span> <span class="fn">b</span> <span class="fn">q</span> <span class="fn">(<span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs.st">st</a></span> <span class="fn">(<span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.lt">lt</a></span> <span class="fn">q</span>)</span>)</span></span> <span class="fn">=</span> <span class="fn"><a href="../.././BrickAccessibility/Classification/HWord.html#BrickAccessibility.HWord.inf">HWord.inf</a> <span class="fn">(<span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandWalks.html#BrickAccessibility.CWord.rightW">rightW</a></span> <span class="fn">q</span>)</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.CWord.bhalf_not"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L257-L258">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.bhalf_not"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">bhalf_not</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord">CWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">Fin</span> <span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.n">n</a></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(<a href="../.././BrickAccessibility/Classification/BandWalks.html#BrickAccessibility.CWord.bhalf">bhalf</a> <span class="fn">S</span> <span class="fn">b</span> <span class="fn">q</span> <span class="fn"><span class="fn">!</span><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs.st">st</a></span> <span class="fn">(<span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.lt">lt</a></span> <span class="fn">q</span>)</span></span></span>)</span> <span class="fn">=</span> <span class="fn"><a href="../.././BrickAccessibility/Classification/HWord.html#BrickAccessibility.HWord.inf">HWord.inf</a> <span class="fn">(<span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandWalks.html#BrickAccessibility.CWord.leftW">leftW</a></span> <span class="fn">q</span>)</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.CWord.step_succ"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L262-L267">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.step_succ"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">step_succ</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord">CWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.Alt">Alt</a> <span class="fn">S</span> <span class="fn">b</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">Fin</span> <span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.n">n</a></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Step">Step</a></span> <span class="fn">(<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.pairAt">pairAt</a> <span class="fn">S</span> <span class="fn">b</span> <span class="fn">q</span> <span class="fn">(<span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs.st">st</a></span> <span class="fn">(<span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.lt">lt</a></span> <span class="fn">q</span>)</span>)</span>)</span> <span class="fn">(<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.pairAt">pairAt</a> <span class="fn">S</span> <span class="fn">b</span> <span class="fn">(<span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.succ">succ</a></span> <span class="fn">q</span>)</span> <span class="fn">(<span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs.st">st</a></span> <span class="fn">(<span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.lt">lt</a></span> <span class="fn">(<span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.succ">succ</a></span> <span class="fn">q</span>)</span>)</span>)</span>)</span></span></div></div></div></div><div class="decl" id="BrickAccessibility.CWord.step_pred"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L269-L276">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.step_pred"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">step_pred</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord">CWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.Alt">Alt</a> <span class="fn">S</span> <span class="fn">b</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn"><span class="fn">Fin</span> <span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.n">n</a></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Step">Step</a></span> <span class="fn">(<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.pairAt">pairAt</a> <span class="fn">S</span> <span class="fn">b</span> <span class="fn">(<span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.succ">succ</a></span> <span class="fn">q</span>)</span> <span class="fn"><span class="fn">!</span><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs.st">st</a></span> <span class="fn">(<span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.lt">lt</a></span> <span class="fn">(<span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.succ">succ</a></span> <span class="fn">q</span>)</span>)</span></span></span>)</span> <span class="fn">(<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.pairAt">pairAt</a> <span class="fn">S</span> <span class="fn">b</span> <span class="fn">q</span> <span class="fn"><span class="fn">!</span><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs.st">st</a></span> <span class="fn">(<span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.lt">lt</a></span> <span class="fn">q</span>)</span></span></span>)</span></span></div></div></div></div><div class="decl" id="BrickAccessibility.CWord.pos_step"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L278-L288">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.pos_step"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">pos_step</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord">CWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.Alt">Alt</a> <span class="fn">S</span> <span class="fn">b</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hP</span> : <span class="fn"><span class="fn">P</span> <span class="fn">∈</span> <span class="fn"><a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.Pos">Pos</a> <span class="fn">S</span> <span class="fn">b</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P'</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Step">Step</a></span> <span class="fn">P</span> <span class="fn">P'</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">P'</span> <span class="fn">∈</span> <span class="fn"><a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.Pos">Pos</a> <span class="fn">S</span> <span class="fn">b</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.CWord.pos_swap"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L291-L293">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.pos_swap"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">pos_swap</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord">CWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hP</span> : <span class="fn"><span class="fn">P</span> <span class="fn">∈</span> <span class="fn"><a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.Pos">Pos</a> <span class="fn">S</span> <span class="fn">b</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">P</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair.swap">swap</a></span> <span class="fn">∈</span> <span class="fn"><a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.Pos">Pos</a> <span class="fn">S</span> <span class="fn">b</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.CWord.pos_conn"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L295-L320">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.pos_conn"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">pos_conn</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord">CWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.Alt">Alt</a> <span class="fn">S</span> <span class="fn">b</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hP</span> : <span class="fn"><span class="fn">P</span> <span class="fn">∈</span> <span class="fn"><a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.Pos">Pos</a> <span class="fn">S</span> <span class="fn">b</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Orbit">Orbit</a></span> <span class="fn">(<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.pairAt">pairAt</a> <span class="fn">S</span> <span class="fn">b</span> <span class="fn"><span class="fn">b</span>.<a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.first">first</a></span> <span class="fn">true</span>)</span> <span class="fn">P</span></span></div></div></div></div><div class="decl" id="BrickAccessibility.CWord.orbit_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/Orbits.lean#L322-L325">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.orbit_iff"><span class="name">BrickAccessibility</span>.<span class="name">CWord</span>.<span class="name">orbit_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord">CWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/BandBQ.html#BrickAccessibility.CWord.Alt">Alt</a> <span class="fn">S</span> <span class="fn">b</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">P</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hP</span> : <span class="fn"><span class="fn">P</span> <span class="fn">∈</span> <span class="fn"><a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.Pos">Pos</a> <span class="fn">S</span> <span class="fn">b</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">P'</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Pair">Pair</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.MonomialData.Signs.Orbit">Orbit</a></span> <span class="fn">P</span> <span class="fn">P'</span></span> <span class="fn">↔</span> <span class="fn"><span class="fn">P'</span> <span class="fn">∈</span> <span class="fn"><a href="../.././BrickAccessibility/Classification/Orbits.html#BrickAccessibility.CWord.Pos">Pos</a> <span class="fn">S</span> <span class="fn">b</span></span></span></span></div></div><p>The positions of a band form one orbit.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Verification · Brick accessibility</title><link rel="stylesheet" href="assets/site.css"></head>
+<body><a class="skip" href="#main">Skip to content</a><header class="site-header"><nav class="nav" aria-label="Main"><a class="brand" href="index.html">Brick accessibility</a><a href="index.html">Overview</a><a href="statement.html">Statement</a><a href="proof.html">Proof guide</a><a href="api.html">API</a><a href="verification.html">Verification</a><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial">GitHub</a></nav></header>
+<main id="main"><p class="eyebrow">Reproducibility</p><h1>Verification and provenance</h1>
+<p>The library and its independent statement compile with Lean 4.35.0-rc3. Their axiom reports contain only <code>propext</code>, <code>Classical.choice</code>, and <code>Quot.sound</code>. The three deliberate Challenge placeholders are not part of the proof.</p>
+<p>October 29, 2026 (Lean v4.35.0-rc3, module system): fresh build passed (2347 jobs including Challenge and Solution); axiom audit passed with only propext, Classical.choice and Quot.sound, and a scan of all 2921 declarations found no other axiom. lake comparator check of the independent statement of Theorem A, Corollary B and Corollary 5.6 passed, with con-ron, NanoDa and Lean kernel replay.</p>
+<h2>Build the project</h2><pre><code>lake exe cache get
+lake build
+python3 scripts/audit_axioms.py
+python3 scripts/generate_challenge.py --check
+lake build Challenge Solution</code></pre>
+<p>Once Mathlib is fetched from the cache, a fresh build of the library takes a few minutes on a desktop machine. Build <code>Challenge Solution</code> before independent comparison with <code>scripts/verify-comparator.sh</code>.</p>
+<h2>Source and attribution</h2><p>The development is maintained by Haruhisa Enomoto. The provenance record describes AI contributions, source revisions and licences. No source is vendored from other projects.</p>
+<p><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/PROVENANCE.md">Provenance</a> · <a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/docs/PAPER-CORRESPONDENCE.md">Paper correspondence</a></p>
+<p><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/docs/VERIFICATION.md">Detailed verification records and reproduction commands</a></p>
+</main><footer class="site-footer">Source: <a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/tree/cbf78d20c764070d6978afed9d10bd5cb93e345d">cbf78d2</a> · API: <a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/tree/cbf78d20c764070d6978afed9d10bd5cb93e345d">cbf78d2</a><br>Haruhisa Enomoto · Lean formalization · Apache-2.0</footer></body></html>

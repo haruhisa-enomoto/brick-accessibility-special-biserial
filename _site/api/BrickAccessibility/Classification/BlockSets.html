@@ -1,0 +1,409 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>BrickAccessibility.Classification.BlockSets</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="BrickAccessibility.Classification.BlockSets";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Brick accessibility</a></span></h1><h2 class="header_filename break_within"><span class="name">BrickAccessibility</span>.<span class="name">Classification</span>.<span class="name">BlockSets</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.35.0-rc3/src/Init.lean">Init</a></li><li><a href="../.././BrickAccessibility/Classification/BlockTransport.html">BrickAccessibility.Classification.BlockTransport</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-BrickAccessibility.Classification.BlockSets" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.ptr"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">ptr</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.ptrs"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">ptrs</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.tr_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">tr_blk</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.trs_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">trs_blk</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.blk_sup"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">blk_sup</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.ker_eq_blk'"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">ker_eq_blk'</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.Kset"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">Kset</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.Iset"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">Iset</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.Kc_eq_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">Kc_eq_blk</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.Ic_eq_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">Ic_eq_blk</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.plusSet"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">plusSet</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.minusSet"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">minusSet</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.plus_eq_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">plus_eq_blk</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.minus_eq_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">minus_eq_blk</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.MonomialData.BlockQuiver.finrank_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">finrank_blk</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Boundary-subspaces-on-block-quiver-modules-as-position-sets" class="markdown-heading">Boundary subspaces on block quiver modules as position sets <a class="hover-link" href="#Boundary-subspaces-on-block-quiver-modules-as-position-sets">#</a></h1><p>The transports along letters act on position sets (<code><a href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.ptr">ptr</a></code>, <code><a href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.ptrs">ptrs</a></code>), and for every
+half-word <code>h</code> the subspaces <code>h⁺</code>, <code>h⁻</code> of a block quiver module are supported on
+explicit position sets (<code><a href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.plus_eq_blk">plus_eq_blk</a></code>, <code><a href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.minus_eq_blk">minus_eq_blk</a></code>). The pair functors are
+then supported on explicit sets and have dimension <code>|num \ den| · dim V</code>.</p></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.ptr"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L35-L38">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.ptr"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">ptr</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Letter">Letter</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span> → <span class="fn"><span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span> → <a href="../.././foundational_types.html">Prop</a>)</span> → <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span> → <a href="../.././foundational_types.html">Prop</a></span></span></span></div></div><p>Transport of a position set along a letter.</p><details id="instances-for-list-BrickAccessibility.MonomialData.BlockQuiver.ptr" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.ptrs"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L40-L43">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.ptrs"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">ptrs</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">List</span> <span class="fn">(<a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Letter">Letter</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span>)</span></span> → <span class="fn"><span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span> → <a href="../.././foundational_types.html">Prop</a>)</span> → <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span> → <a href="../.././foundational_types.html">Prop</a></span></span></span></div></div><p>Transport of a position set along a list of letters.</p><details id="instances-for-list-BrickAccessibility.MonomialData.BlockQuiver.ptrs" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.tr_blk"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L45-L50">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.tr_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">tr_blk</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hC</span> : <span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.KillsZeroPaths">KillsZeroPaths</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">l</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Letter">Letter</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">J</span> : <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span> → <a href="../.././foundational_types.html">Prop</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Transport.html#BrickAccessibility.MonomialData.tr">tr</a></span> <span class="fn">l</span> <span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">J</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.ptr">ptr</a></span> <span class="fn">l</span> <span class="fn">J</span>)</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.trs_blk"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L52-L56">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.trs_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">trs_blk</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hC</span> : <span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.KillsZeroPaths">KillsZeroPaths</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">L</span> : <span class="fn"><span class="fn">List</span> <span class="fn">(<a href="../.././BrickAccessibility/Quiver/Strings.html#BrickAccessibility.Letter">Letter</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span>)</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">J</span> : <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span> → <a href="../.././foundational_types.html">Prop</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Transport.html#BrickAccessibility.MonomialData.trs">trs</a></span> <span class="fn">L</span> <span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">J</span>)</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.ptrs">ptrs</a></span> <span class="fn">L</span> <span class="fn">J</span>)</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.blk_sup"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L58-L71">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.blk_sup"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">blk_sup</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hC</span> : <span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.KillsZeroPaths">KillsZeroPaths</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">J </span><span class="fn">J'</span> : <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span> → <a href="../.././foundational_types.html">Prop</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">J</span></span> ⊔ <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">J'</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">fun (<span class="fn">j</span> : <span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span>) =&gt; <span class="fn"><span class="fn"><span class="fn">J</span> <span class="fn">j</span></span> <span class="fn">∨</span> <span class="fn"><span class="fn">J'</span> <span class="fn">j</span></span></span></span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.ker_eq_blk'"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L73-L89">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.ker_eq_blk'"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">ker_eq_blk'</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hC</span> : <span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.KillsZeroPaths">KillsZeroPaths</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">b</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span>.<a href="../.././BrickAccessibility/Statement.html#BrickAccessibility.Statement.FinQuiver.A">A</a></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././BrickAccessibility/Classification/Transport.html#BrickAccessibility.MonomialData.actL">actL</a> <span class="fn">(<span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.α">α</a></span> <span class="fn">b</span>)</span>)</span>.<span class="fn">ker</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">fun (<span class="fn">i</span> : <span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span>) =&gt; <span class="fn"><span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.next">next</a></span> <span class="fn">b</span> <span class="fn">i</span></span> <span class="fn">=</span> <span class="fn">none</span></span></span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.Kset"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L93-L95">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.Kset"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">Kset</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">u</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span>.<a href="../.././BrickAccessibility/Statement.html#BrickAccessibility.Statement.FinQuiver.V">V</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">Bool</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span> → <a href="../.././foundational_types.html">Prop</a></span></div></div><p>The kernel position set.</p><details id="instances-for-list-BrickAccessibility.MonomialData.BlockQuiver.Kset" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.Iset"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L97-L99">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.Iset"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">Iset</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">u</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span>.<a href="../.././BrickAccessibility/Statement.html#BrickAccessibility.Statement.FinQuiver.V">V</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">Bool</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span> → <a href="../.././foundational_types.html">Prop</a></span></div></div><p>The image position set.</p><details id="instances-for-list-BrickAccessibility.MonomialData.BlockQuiver.Iset" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.Kc_eq_blk"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L101-L117">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.Kc_eq_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">Kc_eq_blk</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hC</span> : <span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.KillsZeroPaths">KillsZeroPaths</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">u</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span>.<a href="../.././BrickAccessibility/Statement.html#BrickAccessibility.Statement.FinQuiver.V">V</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">Bool</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/HalfWords.html#BrickAccessibility.MonomialData.Signs.Kc">Kc</a></span> <span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.Mod">Mod</a></span> <span class="fn">hC</span>)</span> <span class="fn">u</span> <span class="fn">n</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.Kset">Kset</a></span> <span class="fn">S</span> <span class="fn">u</span> <span class="fn">n</span>)</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.Ic_eq_blk"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L119-L133">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.Ic_eq_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">Ic_eq_blk</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hC</span> : <span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.KillsZeroPaths">KillsZeroPaths</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">u</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span>.<a href="../.././BrickAccessibility/Statement.html#BrickAccessibility.Statement.FinQuiver.V">V</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">n</span> : <span class="fn">Bool</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/HalfWords.html#BrickAccessibility.MonomialData.Signs.Ic">Ic</a></span> <span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.Mod">Mod</a></span> <span class="fn">hC</span>)</span> <span class="fn">u</span> <span class="fn">n</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.Iset">Iset</a></span> <span class="fn">S</span> <span class="fn">u</span> <span class="fn">n</span>)</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.plusSet"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L135-L139">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.plusSet"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">plusSet</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span>.<a href="../.././BrickAccessibility/Statement.html#BrickAccessibility.Statement.FinQuiver.V">V</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">Bool</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././BrickAccessibility/Classification/HWord.html#BrickAccessibility.HWord">HWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span> → <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span> → <a href="../.././foundational_types.html">Prop</a></span></span></div></div><p>The position set of <code>h⁺</code>.</p><details id="instances-for-list-BrickAccessibility.MonomialData.BlockQuiver.plusSet" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.minusSet"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L141-L144">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.minusSet"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">minusSet</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span>.<a href="../.././BrickAccessibility/Statement.html#BrickAccessibility.Statement.FinQuiver.V">V</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">Bool</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././BrickAccessibility/Classification/HWord.html#BrickAccessibility.HWord">HWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span> → <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span> → <a href="../.././foundational_types.html">Prop</a></span></span></div></div><p>The position set of <code>h⁻</code>.</p><details id="instances-for-list-BrickAccessibility.MonomialData.BlockQuiver.minusSet" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.plus_eq_blk"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L146-L153">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.plus_eq_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">plus_eq_blk</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hC</span> : <span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.KillsZeroPaths">KillsZeroPaths</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span>.<a href="../.././BrickAccessibility/Statement.html#BrickAccessibility.Statement.FinQuiver.V">V</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">Bool</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/HWord.html#BrickAccessibility.HWord">HWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/HWord.html#BrickAccessibility.MonomialData.Signs.plus">plus</a></span> <span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.Mod">Mod</a></span> <span class="fn">hC</span>)</span> <span class="fn">v</span> <span class="fn">s</span> <span class="fn">h</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.plusSet">plusSet</a></span> <span class="fn">S</span> <span class="fn">v</span> <span class="fn">s</span> <span class="fn">h</span>)</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.minus_eq_blk"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L155-L162">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.minus_eq_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">minus_eq_blk</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hC</span> : <span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.KillsZeroPaths">KillsZeroPaths</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/Signs.html#BrickAccessibility.MonomialData.Signs">Signs</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">v</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span>.<a href="../.././BrickAccessibility/Statement.html#BrickAccessibility.Statement.FinQuiver.V">V</a></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">s</span> : <span class="fn">Bool</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><a href="../.././BrickAccessibility/Classification/HWord.html#BrickAccessibility.HWord">HWord</a> <span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData.Q">Q</a></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">S</span>.<a href="../.././BrickAccessibility/Classification/HWord.html#BrickAccessibility.MonomialData.Signs.minus">minus</a></span> <span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.Mod">Mod</a></span> <span class="fn">hC</span>)</span> <span class="fn">v</span> <span class="fn">s</span> <span class="fn">h</span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.minusSet">minusSet</a></span> <span class="fn">S</span> <span class="fn">v</span> <span class="fn">s</span> <span class="fn">h</span>)</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.MonomialData.BlockQuiver.finrank_blk"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Classification/BlockSets.lean#L164-L182">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Classification/BlockSets.html#BrickAccessibility.MonomialData.BlockQuiver.finrank_blk"><span class="name">BrickAccessibility</span>.<span class="name">MonomialData</span>.<span class="name">BlockQuiver</span>.<span class="name">finrank_blk</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">B</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">B</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">D</span> : <span class="fn"><a href="../.././BrickAccessibility/Quiver/Monomial.html#BrickAccessibility.MonomialData">MonomialData</a> <span class="fn">k</span> <span class="fn">B</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">V</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">C</span> : <span class="fn"><span class="fn"><span class="fn">D</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver">BlockQuiver</a></span> <span class="fn">V</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hC</span> : <span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.KillsZeroPaths">KillsZeroPaths</a></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">V</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">J</span> : <span class="fn"><span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockQuiver.html#BrickAccessibility.MonomialData.BlockQuiver.P">P</a></span> → <a href="../.././foundational_types.html">Prop</a></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">DecidablePred</span> <span class="fn">J</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">↥<span class="fn">(<span class="fn"><span class="fn">C</span>.<a href="../.././BrickAccessibility/Classification/BlockTransport.html#BrickAccessibility.MonomialData.BlockQuiver.blk">blk</a></span> <span class="fn">hC</span> <span class="fn">J</span>)</span></span></span> <span class="fn">=</span> <span class="fn"><span class="fn"><span class="fn">(<span class="fn">Finset.filter</span> <span class="fn">J</span> <span class="fn">Finset.univ</span>)</span>.<span class="fn">card</span></span> <span class="fn">*</span> <span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">V</span></span></span></span></div></div><p>Dimension of a block subspace.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

@@ -1,0 +1,221 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>BrickAccessibility.Section2.CutDual</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="BrickAccessibility.Section2.CutDual";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Brick accessibility</a></span></h1><h2 class="header_filename break_within"><span class="name">BrickAccessibility</span>.<span class="name">Section2</span>.<span class="name">CutDual</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Section2/CutDual.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.35.0-rc3/src/Init.lean">Init</a></li><li><a href="../.././BrickAccessibility/Section2/Cut.html">BrickAccessibility.Section2.Cut</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-BrickAccessibility.Section2.CutDual" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.FinitelyManyKernelsBy"><span class="name">BrickAccessibility</span>.<span class="name">FinitelyManyKernelsBy</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.surjective_of_ne_zero"><span class="name">BrickAccessibility</span>.<span class="name">surjective_of_ne_zero</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.finrank_ker_add_one"><span class="name">BrickAccessibility</span>.<span class="name">finrank_ker_add_one</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.finrank_end_le_finrank_hom_sub"><span class="name">BrickAccessibility</span>.<span class="name">finrank_end_le_finrank_hom_sub</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.exists_large_locus_dual"><span class="name">BrickAccessibility</span>.<span class="name">exists_large_locus_dual</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.exists_brick_submodule"><span class="name">BrickAccessibility</span>.<span class="name">exists_brick_submodule</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Proposition-2-1-2-the-dual-inequality-gives-a-brick-submodule" class="markdown-heading">Proposition 2.1(2): the dual inequality gives a brick submodule <a class="hover-link" href="#Proposition-2-1-2-the-dual-inequality-gives-a-brick-submodule">#</a></h1><p>Let <code>M</code> be a finite-dimensional nonsimple brick over an algebraically closed
+field and <code>S</code> a one-dimensional simple module such that only finitely many
+kernels of epimorphisms <code>M → S</code> occur up to isomorphism (Remark 2.2). If
+<code>dim Ext¹(S, M) &lt; dim Hom(M, S)</code>, then <code>M</code> has a brick submodule of dimension
+<code>dim M - 1</code> (<code><a href="../.././BrickAccessibility/Section2/CutDual.html#BrickAccessibility.exists_brick_submodule">exists_brick_submodule</a></code>).</p><p>The manuscript deduces part (2) from part (1) by the duality <code>D</code>. Here the
+argument is dualized directly: Step 1 applies <code>kernel_polyCovered</code> to the
+transposes of the inclusions <code>ker g → M</code>, and Step 2 uses the contravariant
+connecting inequality <code>Ext1.finrank_hom_sub_le</code>.</p></div><div class="decl" id="BrickAccessibility.FinitelyManyKernelsBy"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Section2/CutDual.lean#L32-L37">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Section2/CutDual.html#BrickAccessibility.FinitelyManyKernelsBy"><span class="name">BrickAccessibility</span>.<span class="name">FinitelyManyKernelsBy</span></a></span><span class="decl_args">
+<span class="fn">(<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_1)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_2)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> u_3)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><a href="../.././foundational_types.html">Prop</a></div></div><p>Remark 2.2's dual finiteness hypothesis: only finitely many kernels of
+nonzero maps <code>M → S</code> occur up to isomorphism.</p><details id="instances-for-list-BrickAccessibility.FinitelyManyKernelsBy" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.surjective_of_ne_zero"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Section2/CutDual.lean#L43-L47">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Section2/CutDual.html#BrickAccessibility.surjective_of_ne_zero"><span class="name">BrickAccessibility</span>.<span class="name">surjective_of_ne_zero</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsSimpleModule</span> <span class="fn">A</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">g</span> : <span class="fn"><span class="fn">M</span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">S</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hg</span> : <span class="fn"><span class="fn">g</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Function.Surjective</span> <span class="fn">⇑<span class="fn">g</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.finrank_ker_add_one"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Section2/CutDual.lean#L49-L56">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Section2/CutDual.html#BrickAccessibility.finrank_ker_add_one"><span class="name">BrickAccessibility</span>.<span class="name">finrank_ker_add_one</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">A</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsSimpleModule</span> <span class="fn">A</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hS1</span> : <span class="fn"><span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">S</span></span> <span class="fn">=</span> <span class="fn">1</span></span>)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">g</span> : <span class="fn"><span class="fn">M</span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">S</span></span>}</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hg</span> : <span class="fn"><span class="fn">g</span> <span class="fn">≠</span> <span class="fn">0</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">↥<span class="fn"><span class="fn">g</span>.<span class="fn">ker</span></span></span></span> <span class="fn">+</span> <span class="fn">1</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">M</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.finrank_end_le_finrank_hom_sub"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Section2/CutDual.lean#L58-L68">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Section2/CutDual.html#BrickAccessibility.finrank_end_le_finrank_hom_sub"><span class="name">BrickAccessibility</span>.<span class="name">finrank_end_le_finrank_hom_sub</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn"><span class="fn">Submodule</span> <span class="fn">A</span> <span class="fn">M</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">(<span class="fn">↥<span class="fn">p</span></span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">↥<span class="fn">p</span></span>)</span></span> <span class="fn">≤</span> <span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">(<span class="fn">↥<span class="fn">p</span></span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">M</span>)</span></span></span></div></div><p><code>End(p)</code> embeds into <code>Hom(p, M)</code>.</p></div></div><div class="decl" id="BrickAccessibility.exists_large_locus_dual"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Section2/CutDual.lean#L70-L174">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Section2/CutDual.html#BrickAccessibility.exists_large_locus_dual"><span class="name">BrickAccessibility</span>.<span class="name">exists_large_locus_dual</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">A</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Infinite</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsSimpleModule</span> <span class="fn">A</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hS1</span> : <span class="fn"><span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">S</span></span> <span class="fn">=</span> <span class="fn">1</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hfin</span> : <span class="fn"><a href="../.././BrickAccessibility/Section2/CutDual.html#BrickAccessibility.FinitelyManyKernelsBy">FinitelyManyKernelsBy</a> <span class="fn">A</span> <span class="fn">M</span> <span class="fn">S</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hr</span> : <span class="fn"><span class="fn">0</span> <span class="fn">&lt;</span> <span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">(<span class="fn">M</span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">S</span>)</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">g</span> : <span class="fn"><span class="fn">M</span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">S</span></span>),
+  <span class="fn"><span class="fn"><span class="fn">g</span> <span class="fn">≠</span> <span class="fn">0</span></span> <span class="fn">∧</span>     <span class="fn"><span class="fn"><span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">(<span class="fn">↥<span class="fn"><span class="fn">g</span>.<span class="fn">ker</span></span></span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">↥<span class="fn"><span class="fn">g</span>.<span class="fn">ker</span></span></span>)</span></span> <span class="fn">+</span> <span class="fn">(<span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">(<span class="fn">M</span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">S</span>)</span></span> <span class="fn">-</span> <span class="fn">1</span>)</span></span> <span class="fn">≤</span> <span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">(<span class="fn">↥<span class="fn"><span class="fn">g</span>.<span class="fn">ker</span></span></span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">M</span>)</span></span></span></span></span></div></div><p><strong>Step 1 of Proposition 2.1(2).</strong> Some epimorphism <code>g : M → S</code> has kernel
+<code>K</code> with <code>dim End(K) + dim Hom(M, S) - 1 ≤ dim Hom(K, M)</code>.</p></div></div><div class="decl" id="BrickAccessibility.exists_brick_submodule"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Section2/CutDual.lean#L176-L204">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Section2/CutDual.html#BrickAccessibility.exists_brick_submodule"><span class="name">BrickAccessibility</span>.<span class="name">exists_brick_submodule</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">S</span> : <a href="../.././foundational_types.html">Type</a> u_3}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">A</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsAlgClosed</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">FiniteDimensional</span> <span class="fn">k</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsSimpleModule</span> <span class="fn">A</span> <span class="fn">S</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hM</span> : <span class="fn"><a href="../.././BrickAccessibility/Basic/Brick.html#BrickAccessibility.IsBrick">IsBrick</a> <span class="fn">A</span> <span class="fn">M</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hns</span> : <span class="fn"><span class="fn">¬</span><span class="fn"><span class="fn">IsSimpleModule</span> <span class="fn">A</span> <span class="fn">M</span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hS1</span> : <span class="fn"><span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">S</span></span> <span class="fn">=</span> <span class="fn">1</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hfin</span> : <span class="fn"><a href="../.././BrickAccessibility/Section2/CutDual.html#BrickAccessibility.FinitelyManyKernelsBy">FinitelyManyKernelsBy</a> <span class="fn">A</span> <span class="fn">M</span> <span class="fn">S</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hineq</span> : <span class="fn"><span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">↥<span class="fn">(<a href="../.././BrickAccessibility/Basic/Ext.html#BrickAccessibility.Ext1">Ext1</a> <span class="fn">k</span> <span class="fn">A</span> <span class="fn">S</span> <span class="fn">M</span>)</span></span></span> <span class="fn">&lt;</span> <span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">(<span class="fn">M</span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">S</span>)</span></span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn">∃ (<span class="fn">N</span> : <span class="fn"><span class="fn">Submodule</span> <span class="fn">A</span> <span class="fn">M</span></span>), <span class="fn"><span class="fn"><a href="../.././BrickAccessibility/Basic/Brick.html#BrickAccessibility.IsBrick">IsBrick</a> <span class="fn">A</span> <span class="fn">↥<span class="fn">N</span></span></span> <span class="fn">∧</span> <span class="fn"><span class="fn"><span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">↥<span class="fn">N</span></span></span> <span class="fn">+</span> <span class="fn">1</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">Module.finrank</span> <span class="fn">k</span> <span class="fn">M</span></span></span></span></span></div></div><p><strong>Proposition 2.1(2).</strong> Over an algebraically closed field, let <code>M</code> be a
+finite-dimensional nonsimple brick and <code>S</code> a one-dimensional simple module such
+that only finitely many kernels of epimorphisms <code>M → S</code> occur up to isomorphism.
+If <code>dim Ext¹(S, M) &lt; dim Hom(M, S)</code>, then <code>M</code> has a brick submodule of
+dimension <code>dim M - 1</code>.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>

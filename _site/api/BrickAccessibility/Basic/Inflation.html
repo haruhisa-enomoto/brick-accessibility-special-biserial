@@ -1,0 +1,309 @@
+<html lang="en"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../.././style.css"></link><link rel="icon" href="../.././favicon.svg"></link><link rel="mask-icon" href="../.././favicon.svg" color="#000000"></link><link rel="prefetch" href="../.././/declarations/declaration-data.bmp" as="image"></link><title>BrickAccessibility.Basic.Inflation</title><script defer="true" src="../.././mathjax-config.js"></script><script defer="true" src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script defer="true" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><script>const SITE_ROOT="../.././";</script><script>const MODULE_NAME="BrickAccessibility.Basic.Inflation";</script><script type="module" src="../.././jump-src.js"></script><script type="module" src="../.././search.js"></script><script type="module" src="../.././expand-nav.js"></script><script type="module" src="../.././how-about.js"></script><script type="module" src="../.././instances.js"></script><script type="module" src="../.././importedBy.js"></script></head><body><input id="nav_toggle" type="checkbox"></input><header><h1><label for="nav_toggle"></label><span><a href="../../../index.html">Brick accessibility</a></span></h1><h2 class="header_filename break_within"><span class="name">BrickAccessibility</span>.<span class="name">Basic</span>.<span class="name">Inflation</span></h2><form id="search_form"><input type="text" name="q" autocomplete="off"></input>&#32;<button id="search_button" onclick="javascript: form.action='../.././search.html';">Search</button></form></header><nav class="internal_nav"><p><a href="#top">return to top</a></p><p class="gh_nav_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean">source</a></p><div class="imports"><details><summary>Imports</summary><ul><li><a href="https://github.com/leanprover/lean4/blob/v4.35.0-rc3/src/Init.lean">Init</a></li><li><a href="../.././BrickAccessibility/Basic/Finiteness.html">BrickAccessibility.Basic.Finiteness</a></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/c55e6e786f49471c72fbddbec5415808896aec1e/Mathlib/Algebra/Module/Torsion/Basic.lean">Mathlib.Algebra.Module.Torsion.Basic</a></li><li><a href="https://github.com/leanprover-community/mathlib4/blob/c55e6e786f49471c72fbddbec5415808896aec1e/Mathlib/RingTheory/Ideal/Quotient/Operations.lean">Mathlib.RingTheory.Ideal.Quotient.Operations</a></li></ul></details><details><summary>Imported by</summary><ul id="imported-by-BrickAccessibility.Basic.Inflation" class="imported-by-list"></ul></details></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.mk_smul_eq"><span class="name">BrickAccessibility</span>.<span class="name">mk_smul_eq</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.toQuotLinear"><span class="name">BrickAccessibility</span>.<span class="name">toQuotLinear</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.toQuotLinear_apply"><span class="name">BrickAccessibility</span>.<span class="name">toQuotLinear_apply</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.homQuotEquiv"><span class="name">BrickAccessibility</span>.<span class="name">homQuotEquiv</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.endQuotEquiv"><span class="name">BrickAccessibility</span>.<span class="name">endQuotEquiv</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.submoduleQuotOrderIso"><span class="name">BrickAccessibility</span>.<span class="name">submoduleQuotOrderIso</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.quotQuotEquiv"><span class="name">BrickAccessibility</span>.<span class="name">quotQuotEquiv</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.isBrick_quot_iff"><span class="name">BrickAccessibility</span>.<span class="name">isBrick_quot_iff</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.HasSmallerBrick.of_quot"><span class="name">BrickAccessibility</span>.<span class="name">HasSmallerBrick</span>.<span class="name">of_quot</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.inflateModule"><span class="name">BrickAccessibility</span>.<span class="name">inflateModule</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.inflate_isScalarTower"><span class="name">BrickAccessibility</span>.<span class="name">inflate_isScalarTower</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.FinitelyManyIso.quot"><span class="name">BrickAccessibility</span>.<span class="name">FinitelyManyIso</span>.<span class="name">quot</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.IsBrickFinite.quot"><span class="name">BrickAccessibility</span>.<span class="name">IsBrickFinite</span>.<span class="name">quot</span></a></div><div class="nav_link"><a class="break_within" href="#BrickAccessibility.IsRepFinite.quot"><span class="name">BrickAccessibility</span>.<span class="name">IsRepFinite</span>.<span class="name">quot</span></a></div></nav><main>
+<div class="mod_doc"><h1 id="Lemma-2-4-modules-over-a-quotient-algebra" class="markdown-heading">Lemma 2.4: modules over a quotient algebra <a class="hover-link" href="#Lemma-2-4-modules-over-a-quotient-algebra">#</a></h1><p>Let <code>I</code> be a two-sided ideal of <code>A</code> and <code>B = A ⧸ I</code>. For modules on which <code>A</code>
+acts through <code>B</code> (<code>IsScalarTower A B M</code>), <code>A</code>-linear and <code>B</code>-linear maps
+coincide, so bricks, submodules and the smaller-brick conclusion agree over <code>A</code>
+and <code>B</code> (<code><a href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.isBrick_quot_iff">isBrick_quot_iff</a></code>, <code><a href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.HasSmallerBrick.of_quot">HasSmallerBrick.of_quot</a></code>). Brick-finiteness and
+representation-finiteness pass from <code>A</code> to <code>B</code> (<code><a href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.IsBrickFinite.quot">IsBrickFinite.quot</a></code>,
+<code><a href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.IsRepFinite.quot">IsRepFinite.quot</a></code>).</p><p>An <code>A</code>-module killed by <code>I</code> becomes a <code>B</code>-module through
+<code>Module.IsTorsionBySet.module</code>, with the required scalar tower.</p></div><div class="decl" id="BrickAccessibility.mk_smul_eq"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L41-L46">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.mk_smul_eq"><span class="name">BrickAccessibility</span>.<span class="name">mk_smul_eq</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">a</span> : <span class="fn">A</span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn">M</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn"><span class="fn">(<span class="fn">Ideal.Quotient.mk</span> <span class="fn">I</span>)</span> <span class="fn">a</span></span> <span class="fn">•</span> <span class="fn">m</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">a</span> <span class="fn">•</span> <span class="fn">m</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.toQuotLinear"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L48-L55">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.toQuotLinear"><span class="name">BrickAccessibility</span>.<span class="name">toQuotLinear</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">N</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">M</span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">M</span> <span class="fn">→ₗ[</span><span class="fn"><span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span></span><span class="fn">]</span> <span class="fn">N</span></span></div></div><p>An <code>A</code>-linear map between modules on which <code>A</code> acts through <code>A ⧸ I</code> is
+<code>A ⧸ I</code>-linear.</p><details id="instances-for-list-BrickAccessibility.toQuotLinear" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.toQuotLinear_apply"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L57-L58">source</a></div><div class="attributes">@[simp]</div>
+<div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.toQuotLinear_apply"><span class="name">BrickAccessibility</span>.<span class="name">toQuotLinear_apply</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">N</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">f</span> : <span class="fn"><span class="fn">M</span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">N</span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">m</span> : <span class="fn">M</span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">(<a href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.toQuotLinear">toQuotLinear</a> <span class="fn">f</span>)</span> <span class="fn">m</span></span> <span class="fn">=</span> <span class="fn"><span class="fn">f</span> <span class="fn">m</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.homQuotEquiv"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L60-L66">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.homQuotEquiv"><span class="name">BrickAccessibility</span>.<span class="name">homQuotEquiv</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">N</span> : <a href="../.././foundational_types.html">Type</a> u_2}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">N</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(<span class="fn">M</span> <span class="fn">→ₗ[</span><span class="fn"><span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span></span><span class="fn">]</span> <span class="fn">N</span>)</span> <span class="fn">≃+</span> <span class="fn">(<span class="fn">M</span> <span class="fn">→ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn">N</span>)</span></span></div></div><p><strong>Lemma 2.4, Hom spaces</strong>: <code>Hom_{A/I}(M, N) = Hom_A(M, N)</code>.</p><details id="instances-for-list-BrickAccessibility.homQuotEquiv" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.endQuotEquiv"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L69-L76">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.endQuotEquiv"><span class="name">BrickAccessibility</span>.<span class="name">endQuotEquiv</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">Module.End</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span> <span class="fn">≃+*</span> <span class="fn"><span class="fn">Module.End</span> <span class="fn">A</span> <span class="fn">M</span></span></span></div></div><p><strong>Lemma 2.4, endomorphism rings</strong> agree over <code>A ⧸ I</code> and <code>A</code>.</p><details id="instances-for-list-BrickAccessibility.endQuotEquiv" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.submoduleQuotOrderIso"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L79-L89">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.submoduleQuotOrderIso"><span class="name">BrickAccessibility</span>.<span class="name">submoduleQuotOrderIso</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><span class="fn">Submodule</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span> <span class="fn">≃o</span> <span class="fn"><span class="fn">Submodule</span> <span class="fn">A</span> <span class="fn">M</span></span></span></div></div><p><strong>Lemma 2.4, submodules</strong> agree over <code>A ⧸ I</code> and <code>A</code>.</p><details id="instances-for-list-BrickAccessibility.submoduleQuotOrderIso" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.quotQuotEquiv"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L92-L95">source</a></div><div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.quotQuotEquiv"><span class="name">BrickAccessibility</span>.<span class="name">quotQuotEquiv</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">P</span> : <span class="fn"><span class="fn">Submodule</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">(<span class="fn">M</span> <span class="fn">⧸</span> <span class="fn">P</span>)</span> <span class="fn">≃ₗ[</span><span class="fn">A</span><span class="fn">]</span> <span class="fn"><span class="fn">M</span> <span class="fn">⧸</span> <span class="fn"><span class="fn">Submodule.restrictScalars</span> <span class="fn">A</span> <span class="fn">P</span></span></span></span></div></div><p><strong>Lemma 2.4, quotients</strong>: the quotient by a submodule is the same over <code>A ⧸ I</code> and <code>A</code>.</p><details id="instances-for-list-BrickAccessibility.quotQuotEquiv" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.isBrick_quot_iff"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L97-L110">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.isBrick_quot_iff"><span class="name">BrickAccessibility</span>.<span class="name">isBrick_quot_iff</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn"><a href="../.././BrickAccessibility/Basic/Brick.html#BrickAccessibility.IsBrick">IsBrick</a> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span> <span class="fn">↔</span> <span class="fn"><a href="../.././BrickAccessibility/Basic/Brick.html#BrickAccessibility.IsBrick">IsBrick</a> <span class="fn">A</span> <span class="fn">M</span></span></span></div></div></div></div><div class="decl" id="BrickAccessibility.HasSmallerBrick.of_quot"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L120-L131">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.HasSmallerBrick.of_quot"><span class="name">BrickAccessibility</span>.<span class="name">HasSmallerBrick</span>.<span class="name">of_quot</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">k</span> : <a href="../.././foundational_types.html">Type</a> u_1}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Field</span> <span class="fn">k</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Algebra</span> <span class="fn">k</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">k</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">A</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">k</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">h</span> : <span class="fn"><a href="../.././BrickAccessibility/Basic/Finiteness.html#BrickAccessibility.HasSmallerBrick">HasSmallerBrick</a> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././BrickAccessibility/Basic/Finiteness.html#BrickAccessibility.HasSmallerBrick">HasSmallerBrick</a> <span class="fn">A</span> <span class="fn">M</span></span></div></div><p>A smaller brick over <code>A ⧸ I</code> is a smaller brick over <code>A</code>.</p></div></div><div class="decl" id="BrickAccessibility.inflateModule"><div class="def"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L139-L141">source</a></div><div class="attributes">@[reducible]</div>
+<div class="decl_header"><span class="decl_kind">def</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.inflateModule"><span class="name">BrickAccessibility</span>.<span class="name">inflateModule</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_1)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span></div></div><p>Modules over <code>A ⧸ I</code> regarded as <code>A</code>-modules.</p><details id="instances-for-list-BrickAccessibility.inflateModule" class="instances-for-list"><summary>Instances For</summary><ul class="instances-for-enum"></ul></details></div></div><div class="decl" id="BrickAccessibility.inflate_isScalarTower"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L143-L151">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.inflate_isScalarTower"><span class="name">BrickAccessibility</span>.<span class="name">inflate_isScalarTower</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u_1)</span></span>
+<span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>]</span></span>
+</span><span class="decl_args"> :</span><div class="decl_type"><span class="fn"><span class="fn">IsScalarTower</span> <span class="fn">A</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span></div></div></div></div><div class="decl" id="BrickAccessibility.FinitelyManyIso.quot"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L153-L212">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.FinitelyManyIso.quot"><span class="name">BrickAccessibility</span>.<span class="name">FinitelyManyIso</span>.<span class="name">quot</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">p</span> : <span class="fn">(<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u) → <span class="fn">[<span class="fn">inst</span> : <span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>] → <span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>] → <a href="../.././foundational_types.html">Prop</a></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">q</span> : <span class="fn">(<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u) → <span class="fn">[<span class="fn">inst</span> : <span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>] → <span class="fn">[<span class="fn"><span class="fn">Module</span> <span class="fn">A</span> <span class="fn">M</span></span>] → <a href="../.././foundational_types.html">Prop</a></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hpq</span> : <span class="fn">∀ (<span class="fn">M</span> : <a href="../.././foundational_types.html">Type</a> u) [<span class="fn">inst</span> : <span class="fn"><span class="fn">AddCommGroup</span> <span class="fn">M</span></span>] [<span class="fn">inst_1</span> : <span class="fn"><span class="fn">Module</span> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">M</span></span>], <span class="fn"><span class="fn"><span class="fn">p</span> <span class="fn">M</span></span> → <span class="fn"><span class="fn">q</span> <span class="fn">M</span></span></span></span>)</span></span>
+<span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././BrickAccessibility/Basic/Finiteness.html#BrickAccessibility.FinitelyManyIso">FinitelyManyIso</a> <span class="fn">A</span> <span class="fn">q</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././BrickAccessibility/Basic/Finiteness.html#BrickAccessibility.FinitelyManyIso">FinitelyManyIso</a> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span> <span class="fn">p</span></span></div></div><p>Finiteness of isomorphism classes passes from <code>A</code> to <code>A ⧸ I</code> for any property
+that inflation preserves.</p></div></div><div class="decl" id="BrickAccessibility.IsBrickFinite.quot"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L214-L219">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.IsBrickFinite.quot"><span class="name">BrickAccessibility</span>.<span class="name">IsBrickFinite</span>.<span class="name">quot</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././BrickAccessibility/Basic/Finiteness.html#BrickAccessibility.IsBrickFinite">IsBrickFinite</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././BrickAccessibility/Basic/Finiteness.html#BrickAccessibility.IsBrickFinite">IsBrickFinite</a> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span></span></div></div><p>Brick-finiteness passes to quotient algebras.</p></div></div><div class="decl" id="BrickAccessibility.IsRepFinite.quot"><div class="theorem"><div class="gh_link"><a href="https://github.com/haruhisa-enomoto/brick-accessibility-special-biserial/blob/cbf78d20c764070d6978afed9d10bd5cb93e345d/BrickAccessibility/Basic/Inflation.lean#L221-L249">source</a></div><div class="decl_header"><span class="decl_kind">theorem</span>
+<span class="decl_name"><a class="break_within" href="../.././BrickAccessibility/Basic/Inflation.html#BrickAccessibility.IsRepFinite.quot"><span class="name">BrickAccessibility</span>.<span class="name">IsRepFinite</span>.<span class="name">quot</span></a></span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">A</span> : <a href="../.././foundational_types.html">Type</a> u}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">Ring</span> <span class="fn">A</span></span>]</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">{<span class="fn">I</span> : <span class="fn"><span class="fn">Ideal</span> <span class="fn">A</span></span>}</span></span>
+</span><span class="impl_arg"><span class="decl_args">
+<span class="fn">[<span class="fn"><span class="fn">I</span>.<span class="fn">IsTwoSided</span></span>]</span></span>
+</span><span class="decl_args">
+<span class="fn">(<span class="fn">hA</span> : <span class="fn"><a href="../.././BrickAccessibility/Basic/Finiteness.html#BrickAccessibility.IsRepFinite">IsRepFinite</a> <span class="fn">A</span></span>)</span></span>
+<span class="decl_args"> :</span><div class="decl_type"><span class="fn"><a href="../.././BrickAccessibility/Basic/Finiteness.html#BrickAccessibility.IsRepFinite">IsRepFinite</a> <span class="fn">(<span class="fn">A</span> <span class="fn">⧸</span> <span class="fn">I</span>)</span></span></div></div><p>Representation-finiteness passes to quotient algebras.</p></div></div></main>
+<nav class="nav"><iframe src="../.././navbar.html" class="navframe" frameBorder="0"></iframe></nav></body></html>
